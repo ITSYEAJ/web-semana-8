@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="presentation">
+
+  <defs>
+    <linearGradient id="fondo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#171a24"/>
+      <stop offset="1" stop-color="#0b0c10"/>
+    </linearGradient>
+    <radialGradient id="brillo" cx="0.7" cy="0.3" r="0.6">
+      <stop offset="0" stop-color="#7c5cff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#7c5cff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#fondo)"/>
+  <rect width="1200" height="630" fill="url(#brillo)"/>
+  <text x="80" y="290" font-family="Outfit, sans-serif" font-size="74" font-weight="700" fill="#f4f5f8">NovaTech</text>
+  <text x="80" y="360" font-family="Outfit, sans-serif" font-size="32" fill="#a78bfa">Componentes, gaming y ordenadores</text>
+  <text x="80" y="420" font-family="Outfit, sans-serif" font-size="24" fill="#8b90a3">Envío en 24 h · Montaje gratuito · Garantía de 3 años</text>
+  <g transform="translate(620, 60) scale(0.9)">
+  <rect x="150" y="15.600000000000023" width="300" height="488.79999999999995" rx="10" fill="#13151c" stroke="#3a4050" stroke-width="2"/>
+  <rect x="186" y="54.70400000000002" width="228" height="410.5919999999999" rx="6"
+        fill="#0b0c10" stroke="#7c5cff" stroke-width="1.5" opacity="0.9"/>
+  <circle cx="240" cy="152.46400000000003" r="39" fill="none" stroke="#67e8f9" stroke-width="2.5"/>
+  <circle cx="240" cy="284.44" r="39" fill="none" stroke="#67e8f9" stroke-width="2.5"/>
+  <rect x="306" y="113.36000000000001" width="96" height="87.984" rx="3" fill="#a78bfa" opacity="0.65"/>
+  <rect x="306" y="235.56" width="96" height="48.879999999999995" rx="3" fill="#3a4050"/>
+  <rect x="210" y="396.864" width="180" height="4" rx="2" fill="#67e8f9"/></g>
+</svg>

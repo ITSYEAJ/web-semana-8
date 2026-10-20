@@ -1,0 +1,973 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NovaTech — Componentes, gaming y ordenadores</title>
+  <meta name="description" content="Tienda de componentes de PC, equipos gaming y portátiles. Envío en 24 h, garantía de 3 años y montaje gratuito.">
+  <meta name="theme-color" content="#0b0c10">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="NovaTech — Componentes, gaming y ordenadores">
+  <meta property="og:description" content="Tienda de componentes de PC, equipos gaming y portátiles. Envío en 24 h, garantía de 3 años y montaje gratuito.">
+  <meta property="og:image" content="img/portada.svg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <!-- Enlace para saltar al contenido: solo se ve al navegar con el teclado. -->
+  <a class="salto-contenido" href="#principal">Saltar al contenido</a>
+
+  <p class="aviso-superior">Envío gratis en pedidos de más de 99 € · Montaje y prueba de estrés incluidos</p>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__interior">
+
+      <a class="marca" href="index.html">
+        <canvas class="marca__logo" id="logo" width="40" height="40" data-logo data-tamano="40"
+                role="img" aria-label="Logotipo de NovaTech: una N sobre un chip violeta y cian"></canvas>
+        <span class="marca__texto">NovaTech</span>
+      </a>
+
+      <!-- Buscador: formulario normal, la búsqueda se lee en catalogo.html -->
+      <form class="buscador" action="catalogo.html" method="get" role="search">
+        <label class="solo-lectores" for="buscar">Buscar productos</label>
+        <input class="buscador__campo" type="search" id="buscar" name="buscar"
+               placeholder="Buscar tarjeta gráfica, monitor, teclado…">
+        <button class="buscador__boton" type="submit">
+          <span aria-hidden="true">🔍</span>
+          <span class="solo-lectores">Buscar</span>
+        </button>
+      </form>
+
+      <div class="cabecera__acciones">
+        <a class="carrito-enlace" href="carrito.html">
+          <span class="carrito-enlace__icono" aria-hidden="true">🛒</span>
+          <span class="carrito-enlace__texto">
+            Carrito
+            <strong data-carrito-total>0,00 €</strong>
+          </span>
+          <span class="carrito-enlace__contador" data-carrito-contador hidden>0</span>
+          <span class="solo-lectores" data-carrito-resumen>Carrito vacío</span>
+        </a>
+
+        <button class="menu-boton" type="button"
+                aria-expanded="false" aria-controls="menu-principal" data-menu-boton>
+          <span class="menu-boton__barras" aria-hidden="true"></span>
+          <span class="solo-lectores">Abrir menú de navegación</span>
+        </button>
+      </div>
+
+      <nav class="navegacion" id="menu-principal" aria-label="Navegación principal" data-menu>
+        <ul class="navegacion__lista">
+          <li><a class="navegacion__enlace" href="catalogo.html">Catálogo</a></li>
+          <li><a class="navegacion__enlace" href="catalogo.html?categoria=graficas">Tarjetas gráficas</a></li>
+          <li><a class="navegacion__enlace" href="catalogo.html?categoria=equipos">PCs montados</a></li>
+          <li><a class="navegacion__enlace" href="catalogo.html?categoria=portatiles">Portátiles</a></li>
+          <li><a class="navegacion__enlace" href="catalogo.html?oferta=si">Ofertas</a></li>
+          <li><a class="navegacion__enlace" href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="principal">
+
+    <!-- ============ Portada ============ -->
+    <section class="hero" aria-labelledby="hero-titulo">
+      <div class="contenedor banner">
+        <div class="banner__marco">
+          <canvas class="banner__lienzo" id="banner" role="img"
+                  aria-label="Banner de NovaTech, tienda de informática y gaming: una tarjeta gráfica y un procesador sobre un circuito violeta y cian. Componentes, PCs montados y portátiles, con envío en 24 horas, montaje gratis y garantía de 3 años."></canvas>
+        </div>
+      </div>
+
+      <div class="contenedor hero__interior">
+
+        <div class="hero__texto">
+          <p class="hero__etiqueta">Nueva generación disponible</p>
+          <h1 class="hero__titulo" id="hero-titulo">Monta el PC que siempre has querido</h1>
+          <p class="hero__descripcion">Componentes probados uno a uno, montaje gratuito y garantía de 3 años. Si no rinde como prometemos, te devolvemos el dinero.</p>
+          <div class="hero__acciones">
+            <a class="boton boton--acento" href="catalogo.html">Ver catálogo</a>
+            <a class="boton boton--contorno" href="catalogo.html?categoria=equipos">Configura tu equipo</a>
+          </div>
+        </div>
+
+        <div class="hero__media">
+          <img src="img/hero-equipo.svg" alt="Torre gaming con iluminación RGB y refrigeración líquida" width="720" height="600" fetchpriority="high">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ Ventajas ============ -->
+    <section class="ventajas" aria-label="Ventajas de comprar aquí">
+      <div class="contenedor">
+        <ul class="ventajas__lista">
+          <li class="ventaja">
+            <canvas class="ventaja__icono" width="56" height="56" data-icono="envio" data-tamano="56"
+                    role="img" aria-label="Ícono de un camión de reparto"></canvas>
+            <div>
+              <h2 class="ventaja__titulo">Envío en 24 h</h2>
+              <p class="ventaja__texto">Pedidos antes de las 17 h salen el mismo día.</p>
+            </div>
+          </li>
+          <li class="ventaja">
+            <canvas class="ventaja__icono" width="56" height="56" data-icono="garantia" data-tamano="56"
+                    role="img" aria-label="Ícono de un escudo con una marca de verificación"></canvas>
+            <div>
+              <h2 class="ventaja__titulo">Garantía de 3 años</h2>
+              <p class="ventaja__texto">Recogida y sustitución sin coste.</p>
+            </div>
+          </li>
+          <li class="ventaja">
+            <canvas class="ventaja__icono" width="56" height="56" data-icono="montaje" data-tamano="56"
+                    role="img" aria-label="Ícono de un engranaje"></canvas>
+            <div>
+              <h2 class="ventaja__titulo">Montaje gratuito</h2>
+              <p class="ventaja__texto">Montamos y probamos el equipo antes de enviarlo.</p>
+            </div>
+          </li>
+          <li class="ventaja">
+            <canvas class="ventaja__icono" width="56" height="56" data-icono="pago" data-tamano="56"
+                    role="img" aria-label="Ícono de una tarjeta de pago"></canvas>
+            <div>
+              <h2 class="ventaja__titulo">Paga a plazos</h2>
+              <p class="ventaja__texto">Hasta 12 meses sin intereses.</p>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ Categorías ============ -->
+    <section class="categorias" id="categorias" aria-labelledby="categorias-titulo">
+      <div class="contenedor">
+
+        <header class="seccion__encabezado">
+          <h2 class="seccion__titulo" id="categorias-titulo">Compra por categoría</h2>
+          <p class="seccion__texto">Todo lo que necesitas para montar, ampliar o renovar tu equipo.</p>
+        </header>
+
+        <ul class="categorias__rejilla">
+          <li>
+            <a class="categoria" href="catalogo.html?categoria=graficas">
+              <img class="categoria__imagen" src="img/cat-graficas.svg" alt="" width="240" height="180" loading="lazy" aria-hidden="true">
+              <span class="categoria__nombre">Tarjetas gráficas</span>
+              <span class="categoria__texto">Para jugar en 1440p y 4K</span>
+              <span class="categoria__total">3 productos</span>
+            </a>
+          </li>
+          <li>
+            <a class="categoria" href="catalogo.html?categoria=procesadores">
+              <img class="categoria__imagen" src="img/cat-procesadores.svg" alt="" width="240" height="180" loading="lazy" aria-hidden="true">
+              <span class="categoria__nombre">Procesadores</span>
+              <span class="categoria__texto">El cerebro de tu equipo</span>
+              <span class="categoria__total">3 productos</span>
+            </a>
+          </li>
+          <li>
+            <a class="categoria" href="catalogo.html?categoria=equipos">
+              <img class="categoria__imagen" src="img/cat-equipos.svg" alt="" width="240" height="180" loading="lazy" aria-hidden="true">
+              <span class="categoria__nombre">PCs montados</span>
+              <span class="categoria__texto">Listos para enchufar y jugar</span>
+              <span class="categoria__total">3 productos</span>
+            </a>
+          </li>
+          <li>
+            <a class="categoria" href="catalogo.html?categoria=portatiles">
+              <img class="categoria__imagen" src="img/cat-portatiles.svg" alt="" width="240" height="180" loading="lazy" aria-hidden="true">
+              <span class="categoria__nombre">Portátiles</span>
+              <span class="categoria__texto">Potencia que cabe en la mochila</span>
+              <span class="categoria__total">2 productos</span>
+            </a>
+          </li>
+          <li>
+            <a class="categoria" href="catalogo.html?categoria=monitores">
+              <img class="categoria__imagen" src="img/cat-monitores.svg" alt="" width="240" height="180" loading="lazy" aria-hidden="true">
+              <span class="categoria__nombre">Monitores</span>
+              <span class="categoria__texto">De 144 Hz en adelante</span>
+              <span class="categoria__total">2 productos</span>
+            </a>
+          </li>
+          <li>
+            <a class="categoria" href="catalogo.html?categoria=perifericos">
+              <img class="categoria__imagen" src="img/cat-perifericos.svg" alt="" width="240" height="180" loading="lazy" aria-hidden="true">
+              <span class="categoria__nombre">Periféricos</span>
+              <span class="categoria__texto">Teclados, ratones y cascos</span>
+              <span class="categoria__total">3 productos</span>
+            </a>
+          </li>
+          <li>
+            <a class="categoria" href="catalogo.html?categoria=almacenamiento">
+              <img class="categoria__imagen" src="img/cat-almacenamiento.svg" alt="" width="240" height="180" loading="lazy" aria-hidden="true">
+              <span class="categoria__nombre">Almacenamiento</span>
+              <span class="categoria__texto">SSD NVMe y discos duros</span>
+              <span class="categoria__total">1 productos</span>
+            </a>
+          </li>
+          <li>
+            <a class="categoria" href="catalogo.html?categoria=componentes">
+              <img class="categoria__imagen" src="img/cat-componentes.svg" alt="" width="240" height="180" loading="lazy" aria-hidden="true">
+              <span class="categoria__nombre">Placas y memoria</span>
+              <span class="categoria__texto">La base de todo montaje</span>
+              <span class="categoria__total">2 productos</span>
+            </a>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- ============ Productos destacados ============ -->
+    <section class="destacados" aria-labelledby="destacados-titulo">
+      <div class="contenedor">
+
+        <header class="seccion__encabezado seccion__encabezado--fila">
+          <div>
+            <h2 class="seccion__titulo" id="destacados-titulo">Lo más vendido esta semana</h2>
+            <p class="seccion__texto">Los productos que más salen de nuestro almacén, con stock real actualizado cada hora.</p>
+          </div>
+          <a class="enlace-flecha" href="catalogo.html">Ver todo el catálogo</a>
+        </header>
+
+        <ul class="rejilla-productos">
+        <li>
+          <article class="producto" data-producto
+                   data-categoria="graficas" data-marca="Nytro"
+                   data-precio="549.9" data-valoracion="4.7"
+                   data-oferta="si" data-nombre="Nytro RX-7800 XT 16 GB">
+
+            <div class="producto__media">
+              <a href="productos/nytro-rx-7800-xt-16gb.html" tabindex="-1" aria-hidden="true">
+                <img src="img/prod-grafica-1.svg" alt="" width="640" height="480" loading="lazy">
+              </a>
+              <ul class="producto__distintivos">
+                <li class="distintivo distintivo--oferta">-11 %</li>
+              </ul>
+            </div>
+
+            <div class="producto__cuerpo">
+              <p class="producto__marca">Nytro</p>
+              <h3 class="producto__nombre"><a href="productos/nytro-rx-7800-xt-16gb.html">Nytro RX-7800 XT 16 GB</a></h3>
+
+              <p class="valoracion">
+                <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                <span class="valoracion__texto">
+                  4,7
+                  <span class="solo-lectores">de 5,</span> (214 opiniones)
+                </span>
+              </p>
+
+              <p class="producto__resumen">Tarjeta gráfica de 16 GB pensada para jugar en 1440p a 144 Hz sin bajar la calidad.</p>
+
+              <p class="producto__precios">
+                <span class="producto__precio">549,90 €</span>
+                <s class="producto__precio-anterior"><span class="solo-lectores">Antes</span> 619,90 €</s>
+              </p>
+
+              <p class="stock stock--disponible">En stock</p>
+
+              <button class="boton boton--acento" type="button" data-anadir
+                      data-slug="nytro-rx-7800-xt-16gb" data-nombre="Nytro RX-7800 XT 16 GB" data-precio="549.9"
+                      data-imagen="img/prod-grafica-1.svg" data-stock="12"
+                      >
+                Añadir al carrito
+                <span class="solo-lectores">: Nytro RX-7800 XT 16 GB</span>
+              </button>
+            </div>
+
+          </article>
+        </li>
+        <li>
+          <article class="producto" data-producto
+                   data-categoria="graficas" data-marca="Voltex"
+                   data-precio="649" data-valoracion="4.8"
+                   data-oferta="no" data-nombre="Voltex GTX-4070 Super 12 GB">
+
+            <div class="producto__media">
+              <a href="productos/voltex-gtx-4070-super-12gb.html" tabindex="-1" aria-hidden="true">
+                <img src="img/prod-grafica-2.svg" alt="" width="640" height="480" loading="lazy">
+              </a>
+              <ul class="producto__distintivos">
+                <li class="distintivo distintivo--nuevo">Nuevo</li>
+              </ul>
+            </div>
+
+            <div class="producto__cuerpo">
+              <p class="producto__marca">Voltex</p>
+              <h3 class="producto__nombre"><a href="productos/voltex-gtx-4070-super-12gb.html">Voltex GTX-4070 Super 12 GB</a></h3>
+
+              <p class="valoracion">
+                <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                <span class="valoracion__texto">
+                  4,8
+                  <span class="solo-lectores">de 5,</span> (158 opiniones)
+                </span>
+              </p>
+
+              <p class="producto__resumen">Gráfica de gama alta con trazado de rayos y escalado por IA para 1440p y 4K.</p>
+
+              <p class="producto__precios">
+                <span class="producto__precio">649,00 €</span>
+                
+              </p>
+
+              <p class="stock stock--disponible">En stock</p>
+
+              <button class="boton boton--acento" type="button" data-anadir
+                      data-slug="voltex-gtx-4070-super-12gb" data-nombre="Voltex GTX-4070 Super 12 GB" data-precio="649"
+                      data-imagen="img/prod-grafica-2.svg" data-stock="7"
+                      >
+                Añadir al carrito
+                <span class="solo-lectores">: Voltex GTX-4070 Super 12 GB</span>
+              </button>
+            </div>
+
+          </article>
+        </li>
+        <li>
+          <article class="producto" data-producto
+                   data-categoria="procesadores" data-marca="Krios"
+                   data-precio="379" data-valoracion="4.9"
+                   data-oferta="si" data-nombre="Krios K7-7800X3D">
+
+            <div class="producto__media">
+              <a href="productos/krios-k7-7800x3d.html" tabindex="-1" aria-hidden="true">
+                <img src="img/prod-cpu.svg" alt="" width="640" height="480" loading="lazy">
+              </a>
+              <ul class="producto__distintivos">
+                <li class="distintivo distintivo--oferta">-12 %</li>
+              </ul>
+            </div>
+
+            <div class="producto__cuerpo">
+              <p class="producto__marca">Krios</p>
+              <h3 class="producto__nombre"><a href="productos/krios-k7-7800x3d.html">Krios K7-7800X3D</a></h3>
+
+              <p class="valoracion">
+                <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                <span class="valoracion__texto">
+                  4,9
+                  <span class="solo-lectores">de 5,</span> (341 opiniones)
+                </span>
+              </p>
+
+              <p class="producto__resumen">El procesador más rápido para jugar gracias a sus 96 MB de caché apilada.</p>
+
+              <p class="producto__precios">
+                <span class="producto__precio">379,00 €</span>
+                <s class="producto__precio-anterior"><span class="solo-lectores">Antes</span> 429,00 €</s>
+              </p>
+
+              <p class="stock stock--disponible">En stock</p>
+
+              <button class="boton boton--acento" type="button" data-anadir
+                      data-slug="krios-k7-7800x3d" data-nombre="Krios K7-7800X3D" data-precio="379"
+                      data-imagen="img/prod-cpu.svg" data-stock="15"
+                      >
+                Añadir al carrito
+                <span class="solo-lectores">: Krios K7-7800X3D</span>
+              </button>
+            </div>
+
+          </article>
+        </li>
+        <li>
+          <article class="producto" data-producto
+                   data-categoria="equipos" data-marca="NovaTech"
+                   data-precio="999" data-valoracion="4.8"
+                   data-oferta="si" data-nombre="NovaTech Arena 5">
+
+            <div class="producto__media">
+              <a href="productos/novatech-arena-5.html" tabindex="-1" aria-hidden="true">
+                <img src="img/prod-equipo.svg" alt="" width="640" height="480" loading="lazy">
+              </a>
+              <ul class="producto__distintivos">
+                <li class="distintivo distintivo--oferta">-15 %</li>
+              </ul>
+            </div>
+
+            <div class="producto__cuerpo">
+              <p class="producto__marca">NovaTech</p>
+              <h3 class="producto__nombre"><a href="productos/novatech-arena-5.html">NovaTech Arena 5</a></h3>
+
+              <p class="valoracion">
+                <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                <span class="valoracion__texto">
+                  4,8
+                  <span class="solo-lectores">de 5,</span> (87 opiniones)
+                </span>
+              </p>
+
+              <p class="producto__resumen">Equipo montado y probado para jugar en 1440p. Llega listo para enchufar.</p>
+
+              <p class="producto__precios">
+                <span class="producto__precio">999,00 €</span>
+                <s class="producto__precio-anterior"><span class="solo-lectores">Antes</span> 1179,00 €</s>
+              </p>
+
+              <p class="stock stock--pocas">Últimas 5 unidades</p>
+
+              <button class="boton boton--acento" type="button" data-anadir
+                      data-slug="novatech-arena-5" data-nombre="NovaTech Arena 5" data-precio="999"
+                      data-imagen="img/prod-equipo.svg" data-stock="5"
+                      >
+                Añadir al carrito
+                <span class="solo-lectores">: NovaTech Arena 5</span>
+              </button>
+            </div>
+
+          </article>
+        </li>
+        <li>
+          <article class="producto" data-producto
+                   data-categoria="equipos" data-marca="NovaTech"
+                   data-precio="1499" data-valoracion="4.9"
+                   data-oferta="si" data-nombre="NovaTech Arena 7">
+
+            <div class="producto__media">
+              <a href="productos/novatech-arena-7.html" tabindex="-1" aria-hidden="true">
+                <img src="img/prod-equipo.svg" alt="" width="640" height="480" loading="lazy">
+              </a>
+              <ul class="producto__distintivos">
+                <li class="distintivo distintivo--oferta">-14 %</li>
+              </ul>
+            </div>
+
+            <div class="producto__cuerpo">
+              <p class="producto__marca">NovaTech</p>
+              <h3 class="producto__nombre"><a href="productos/novatech-arena-7.html">NovaTech Arena 7</a></h3>
+
+              <p class="valoracion">
+                <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                <span class="valoracion__texto">
+                  4,9
+                  <span class="solo-lectores">de 5,</span> (64 opiniones)
+                </span>
+              </p>
+
+              <p class="producto__resumen">Nuestro equipo más vendido para 4K, con refrigeración líquida de 240 mm.</p>
+
+              <p class="producto__precios">
+                <span class="producto__precio">1499,00 €</span>
+                <s class="producto__precio-anterior"><span class="solo-lectores">Antes</span> 1749,00 €</s>
+              </p>
+
+              <p class="stock stock--pocas">Últimas 3 unidades</p>
+
+              <button class="boton boton--acento" type="button" data-anadir
+                      data-slug="novatech-arena-7" data-nombre="NovaTech Arena 7" data-precio="1499"
+                      data-imagen="img/prod-equipo.svg" data-stock="3"
+                      >
+                Añadir al carrito
+                <span class="solo-lectores">: NovaTech Arena 7</span>
+              </button>
+            </div>
+
+          </article>
+        </li>
+        <li>
+          <article class="producto" data-producto
+                   data-categoria="portatiles" data-marca="Zephir"
+                   data-precio="1299" data-valoracion="4.7"
+                   data-oferta="si" data-nombre="Zephir Blade 15 RTX">
+
+            <div class="producto__media">
+              <a href="productos/zephir-blade-15-rtx.html" tabindex="-1" aria-hidden="true">
+                <img src="img/prod-portatil.svg" alt="" width="640" height="480" loading="lazy">
+              </a>
+              <ul class="producto__distintivos">
+                <li class="distintivo distintivo--oferta">-10 %</li>
+                        <li class="distintivo distintivo--nuevo">Nuevo</li>
+              </ul>
+            </div>
+
+            <div class="producto__cuerpo">
+              <p class="producto__marca">Zephir</p>
+              <h3 class="producto__nombre"><a href="productos/zephir-blade-15-rtx.html">Zephir Blade 15 RTX</a></h3>
+
+              <p class="valoracion">
+                <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                <span class="valoracion__texto">
+                  4,7
+                  <span class="solo-lectores">de 5,</span> (73 opiniones)
+                </span>
+              </p>
+
+              <p class="producto__resumen">Portátil gaming de 15,6" y 165 Hz con gráfica dedicada y chasis de aluminio.</p>
+
+              <p class="producto__precios">
+                <span class="producto__precio">1299,00 €</span>
+                <s class="producto__precio-anterior"><span class="solo-lectores">Antes</span> 1449,00 €</s>
+              </p>
+
+              <p class="stock stock--disponible">En stock</p>
+
+              <button class="boton boton--acento" type="button" data-anadir
+                      data-slug="zephir-blade-15-rtx" data-nombre="Zephir Blade 15 RTX" data-precio="1299"
+                      data-imagen="img/prod-portatil.svg" data-stock="8"
+                      >
+                Añadir al carrito
+                <span class="solo-lectores">: Zephir Blade 15 RTX</span>
+              </button>
+            </div>
+
+          </article>
+        </li>
+        <li>
+          <article class="producto" data-producto
+                   data-categoria="monitores" data-marca="Aureon"
+                   data-precio="279" data-valoracion="4.6"
+                   data-oferta="si" data-nombre="Aureon View 27 QHD 165 Hz">
+
+            <div class="producto__media">
+              <a href="productos/aureon-view-27-qhd.html" tabindex="-1" aria-hidden="true">
+                <img src="img/prod-monitor.svg" alt="" width="640" height="480" loading="lazy">
+              </a>
+              <ul class="producto__distintivos">
+                <li class="distintivo distintivo--oferta">-15 %</li>
+              </ul>
+            </div>
+
+            <div class="producto__cuerpo">
+              <p class="producto__marca">Aureon</p>
+              <h3 class="producto__nombre"><a href="productos/aureon-view-27-qhd.html">Aureon View 27 QHD 165 Hz</a></h3>
+
+              <p class="valoracion">
+                <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                <span class="valoracion__texto">
+                  4,6
+                  <span class="solo-lectores">de 5,</span> (203 opiniones)
+                </span>
+              </p>
+
+              <p class="producto__resumen">Monitor de 27" y 1440p a 165 Hz, el punto dulce para jugar hoy.</p>
+
+              <p class="producto__precios">
+                <span class="producto__precio">279,00 €</span>
+                <s class="producto__precio-anterior"><span class="solo-lectores">Antes</span> 329,00 €</s>
+              </p>
+
+              <p class="stock stock--disponible">En stock</p>
+
+              <button class="boton boton--acento" type="button" data-anadir
+                      data-slug="aureon-view-27-qhd" data-nombre="Aureon View 27 QHD 165 Hz" data-precio="279"
+                      data-imagen="img/prod-monitor.svg" data-stock="18"
+                      >
+                Añadir al carrito
+                <span class="solo-lectores">: Aureon View 27 QHD 165 Hz</span>
+              </button>
+            </div>
+
+          </article>
+        </li>
+        <li>
+          <article class="producto" data-producto
+                   data-categoria="perifericos" data-marca="Hexon"
+                   data-precio="89.9" data-valoracion="4.8"
+                   data-oferta="no" data-nombre="Hexon Strike TKL">
+
+            <div class="producto__media">
+              <a href="productos/hexon-strike-tkl.html" tabindex="-1" aria-hidden="true">
+                <img src="img/prod-teclado.svg" alt="" width="640" height="480" loading="lazy">
+              </a>
+              <ul class="producto__distintivos">
+                
+              </ul>
+            </div>
+
+            <div class="producto__cuerpo">
+              <p class="producto__marca">Hexon</p>
+              <h3 class="producto__nombre"><a href="productos/hexon-strike-tkl.html">Hexon Strike TKL</a></h3>
+
+              <p class="valoracion">
+                <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                <span class="valoracion__texto">
+                  4,8
+                  <span class="solo-lectores">de 5,</span> (412 opiniones)
+                </span>
+              </p>
+
+              <p class="producto__resumen">Teclado mecánico sin bloque numérico, con interruptores intercambiables en caliente.</p>
+
+              <p class="producto__precios">
+                <span class="producto__precio">89,90 €</span>
+                
+              </p>
+
+              <p class="stock stock--disponible">En stock</p>
+
+              <button class="boton boton--acento" type="button" data-anadir
+                      data-slug="hexon-strike-tkl" data-nombre="Hexon Strike TKL" data-precio="89.9"
+                      data-imagen="img/prod-teclado.svg" data-stock="40"
+                      >
+                Añadir al carrito
+                <span class="solo-lectores">: Hexon Strike TKL</span>
+              </button>
+            </div>
+
+          </article>
+        </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- ============ Oferta de la semana ============ -->
+    <section class="oferta" aria-labelledby="oferta-titulo">
+      <div class="contenedor oferta__tarjeta">
+
+        <div class="oferta__texto">
+          <p class="oferta__etiqueta">Oferta de la semana</p>
+          <h2 class="oferta__titulo" id="oferta-titulo">Equipos montados con un 15 % de descuento</h2>
+          <p class="oferta__descripcion">Elige uno de nuestros equipos preconfigurados, lo montamos, lo probamos 24 horas y te lo enviamos listo para jugar.</p>
+
+          <ul class="oferta__lista">
+            <li>
+              <a href="productos/novatech-arena-7.html">
+                NovaTech Arena 7
+                <strong>1499,00 €</strong>
+                <s>1749,00 €</s>
+              </a>
+            </li>
+            <li>
+              <a href="productos/zephir-blade-15-rtx.html">
+                Zephir Blade 15 RTX
+                <strong>1299,00 €</strong>
+                <s>1449,00 €</s>
+              </a>
+            </li>
+            <li>
+              <a href="productos/novatech-arena-5.html">
+                NovaTech Arena 5
+                <strong>999,00 €</strong>
+                <s>1179,00 €</s>
+              </a>
+            </li>
+            <li>
+              <a href="productos/nytro-rx-7800-xt-16gb.html">
+                Nytro RX-7800 XT 16 GB
+                <strong>549,90 €</strong>
+                <s>619,90 €</s>
+              </a>
+            </li>
+          </ul>
+
+          <a class="boton boton--acento" href="catalogo.html?oferta=si">Ver equipos en oferta</a>
+        </div>
+
+        <div class="oferta__media">
+          <img src="img/oferta.svg" alt="Equipo gaming montado con refrigeración líquida" width="560" height="560" loading="lazy">
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ Marcas ============ -->
+    <section class="marcas" aria-labelledby="marcas-titulo">
+      <div class="contenedor">
+        <header class="seccion__encabezado">
+          <h2 class="seccion__titulo" id="marcas-titulo">Trabajamos con</h2>
+          <p class="seccion__texto">Distribuidor oficial de las marcas que montamos.</p>
+        </header>
+
+        <ul class="marcas__lista">
+          <li><a class="marca-logo" href="catalogo.html?marca=Nytro">Nytro</a></li>
+          <li><a class="marca-logo" href="catalogo.html?marca=Voltex">Voltex</a></li>
+          <li><a class="marca-logo" href="catalogo.html?marca=Krios">Krios</a></li>
+          <li><a class="marca-logo" href="catalogo.html?marca=Hexon">Hexon</a></li>
+          <li><a class="marca-logo" href="catalogo.html?marca=Aureon">Aureon</a></li>
+          <li><a class="marca-logo" href="catalogo.html?marca=Zephir">Zephir</a></li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ============ Guías de compra ============ -->
+    <section class="guias" id="guias" aria-labelledby="guias-titulo">
+      <div class="contenedor">
+
+        <header class="seccion__encabezado">
+          <h2 class="seccion__titulo" id="guias-titulo">Guías de compra</h2>
+          <p class="seccion__texto">Te ayudamos a elegir antes de gastarte el dinero.</p>
+        </header>
+
+        <ul class="guias__rejilla">
+          <li>
+            <article class="guia">
+              <img class="guia__imagen" src="img/guia-1.svg" alt="Módulos de memoria RAM instalados en una placa base" width="640" height="420" loading="lazy">
+              <div class="guia__cuerpo">
+                <p class="guia__meta">
+                  <span class="etiqueta">Componentes</span>
+                  <time datetime="2026-09-02">2 de septiembre de 2026</time>
+                </p>
+                <h3 class="guia__titulo"><a href="catalogo.html?categoria=componentes">¿Cuánta memoria RAM necesitas en 2026?</a></h3>
+                <p class="guia__texto">16 GB siguen siendo suficientes para jugar, pero hay tres casos en los que conviene dar el salto a 32 GB.</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="guia">
+              <img class="guia__imagen" src="img/guia-2.svg" alt="Comparativa de rendimiento entre procesador y tarjeta gráfica" width="640" height="420" loading="lazy">
+              <div class="guia__cuerpo">
+                <p class="guia__meta">
+                  <span class="etiqueta">Guía</span>
+                  <time datetime="2026-08-18">18 de agosto de 2026</time>
+                </p>
+                <h3 class="guia__titulo"><a href="catalogo.html?categoria=procesadores">Cuellos de botella: cómo evitarlos al elegir CPU y GPU</a></h3>
+                <p class="guia__texto">Una tabla sencilla para emparejar procesador y tarjeta gráfica sin desperdiciar dinero.</p>
+              </div>
+            </article>
+          </li>
+          <li>
+            <article class="guia">
+              <img class="guia__imagen" src="img/guia-3.svg" alt="Tres monitores gaming mostrando distintas frecuencias" width="640" height="420" loading="lazy">
+              <div class="guia__cuerpo">
+                <p class="guia__meta">
+                  <span class="etiqueta">Monitores</span>
+                  <time datetime="2026-07-25">25 de julio de 2026</time>
+                </p>
+                <h3 class="guia__titulo"><a href="catalogo.html?categoria=monitores">144 Hz, 240 Hz o 4K: qué monitor te conviene</a></h3>
+                <p class="guia__texto">Depende de a qué juegues y de la gráfica que tengas. Te lo explicamos en cinco minutos.</p>
+              </div>
+            </article>
+          </li>
+        </ul>
+
+      </div>
+    </section>
+
+    <!-- ============ Opiniones ============ -->
+    <section class="opiniones" aria-labelledby="opiniones-titulo">
+      <div class="contenedor">
+
+        <h2 class="seccion__titulo seccion__titulo--centrado" id="opiniones-titulo">Lo que dicen nuestros clientes</h2>
+
+        <div class="carrusel" data-carrusel>
+          <button class="carrusel__control" type="button" data-carrusel-anterior aria-label="Ver opiniones anteriores">
+            <span aria-hidden="true">&#8592;</span>
+          </button>
+
+          <ul class="carrusel__pista" data-carrusel-pista tabindex="0" aria-label="Opiniones de clientes">
+            <li class="carrusel__elemento">
+              <figure class="opinion">
+                <blockquote class="opinion__texto"><p>Pedí un equipo montado un martes y lo tenía el jueves, con las pruebas de temperatura impresas en una hoja. Funcionando perfecto desde el primer día.</p></blockquote>
+                <figcaption class="opinion__autor">
+                  <img src="img/avatar-1.svg" alt="" width="40" height="40" loading="lazy" aria-hidden="true">
+                  <span>
+                    <strong>Jacqueline Wright</strong>
+                    <small>Compró un PC montado</small>
+                  </span>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="carrusel__elemento">
+              <figure class="opinion">
+                <blockquote class="opinion__texto"><p>Me equivoqué al elegir la placa base y me la cambiaron sin discutir. El soporte contesta en el mismo día.</p></blockquote>
+                <figcaption class="opinion__autor">
+                  <img src="img/avatar-2.svg" alt="" width="40" height="40" loading="lazy" aria-hidden="true">
+                  <span>
+                    <strong>Daniel Serra</strong>
+                    <small>Compró una placa base</small>
+                  </span>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="carrusel__elemento">
+              <figure class="opinion">
+                <blockquote class="opinion__texto"><p>Los precios no son los más bajos del mercado, pero el montaje y la garantía de 3 años compensan de sobra.</p></blockquote>
+                <figcaption class="opinion__autor">
+                  <img src="img/avatar-3.svg" alt="" width="40" height="40" loading="lazy" aria-hidden="true">
+                  <span>
+                    <strong>Marta Ibáñez</strong>
+                    <small>Compró una tarjeta gráfica</small>
+                  </span>
+                </figcaption>
+              </figure>
+            </li>
+            <li class="carrusel__elemento">
+              <figure class="opinion">
+                <blockquote class="opinion__texto"><p>Tercera compra en dos años. El portátil llegó con el sistema ya actualizado y sin programas basura.</p></blockquote>
+                <figcaption class="opinion__autor">
+                  <img src="img/avatar-4.svg" alt="" width="40" height="40" loading="lazy" aria-hidden="true">
+                  <span>
+                    <strong>Óscar Peña</strong>
+                    <small>Compró un portátil</small>
+                  </span>
+                </figcaption>
+              </figure>
+            </li>
+          </ul>
+
+          <button class="carrusel__control" type="button" data-carrusel-siguiente aria-label="Ver opiniones siguientes">
+            <span aria-hidden="true">&#8594;</span>
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ Preguntas frecuentes ============ -->
+    <section class="faq" id="faq" aria-labelledby="faq-titulo">
+      <div class="contenedor faq__rejilla">
+
+        <div class="faq__media">
+          <img src="img/soporte.svg" alt="Técnico montando un ordenador en el taller" width="640" height="640" loading="lazy">
+        </div>
+
+        <div class="faq__contenido">
+          <h2 class="seccion__titulo" id="faq-titulo">Preguntas frecuentes</h2>
+          <p class="seccion__texto seccion__texto--izquierda">Lo que nos preguntáis antes de comprar.</p>
+
+          <!-- Acordeón nativo: funciona aunque el JavaScript no cargue. -->
+          <div class="acordeon" data-acordeon>
+            <details class="acordeon__item" open>
+              <summary class="acordeon__pregunta">
+                <span>¿Cuánto tarda el envío?</span>
+                <span class="acordeon__icono" aria-hidden="true"></span>
+              </summary>
+              <div class="acordeon__respuesta"><p>Los pedidos hechos antes de las 17:00 de lunes a viernes salen el mismo día y llegan en 24-48 h. Los equipos montados tardan 3 días laborables porque los probamos durante 24 horas antes de enviarlos.</p></div>
+            </details>
+            <details class="acordeon__item">
+              <summary class="acordeon__pregunta">
+                <span>¿El montaje tiene algún coste?</span>
+                <span class="acordeon__icono" aria-hidden="true"></span>
+              </summary>
+              <div class="acordeon__respuesta"><p>No. Si compras todos los componentes de un equipo en la misma cesta, lo montamos, le instalamos el sistema operativo y le hacemos una prueba de estrés sin coste adicional.</p></div>
+            </details>
+            <details class="acordeon__item">
+              <summary class="acordeon__pregunta">
+                <span>¿Puedo devolver un producto?</span>
+                <span class="acordeon__icono" aria-hidden="true"></span>
+              </summary>
+              <div class="acordeon__respuesta"><p>Tienes 30 días para devolver cualquier producto sin abrir y 14 días si ya lo has usado, siempre que conserve el embalaje. La recogida la pagamos nosotros.</p></div>
+            </details>
+            <details class="acordeon__item">
+              <summary class="acordeon__pregunta">
+                <span>¿Qué cubre la garantía de 3 años?</span>
+                <span class="acordeon__icono" aria-hidden="true"></span>
+              </summary>
+              <div class="acordeon__respuesta"><p>Cualquier fallo de fábrica. Recogemos el producto en tu casa, lo sustituimos y te lo devolvemos. No cubre daños por golpes, líquidos ni overclocking extremo.</p></div>
+            </details>
+            <details class="acordeon__item">
+              <summary class="acordeon__pregunta">
+                <span>¿Se puede pagar a plazos?</span>
+                <span class="acordeon__icono" aria-hidden="true"></span>
+              </summary>
+              <div class="acordeon__respuesta"><p>Sí, en pedidos de más de 300 € puedes dividir el pago hasta en 12 meses sin intereses. Se elige al finalizar la compra.</p></div>
+            </details>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ============ Boletín ============ -->
+    <section class="boletin" aria-labelledby="boletin-titulo">
+      <div class="contenedor">
+        <div class="boletin__tarjeta">
+
+          <div>
+            <h2 class="boletin__titulo" id="boletin-titulo">Avísame de las ofertas</h2>
+            <p class="boletin__texto">Un correo a la semana con las bajadas de precio reales. Sin spam y te borras con un clic.</p>
+          </div>
+
+          <form class="boletin__formulario" novalidate data-boletin>
+            <div class="campo">
+              <label class="solo-lectores" for="email-boletin">Tu correo electrónico</label>
+              <input class="campo__control" type="email" id="email-boletin" name="email"
+                     placeholder="tucorreo@ejemplo.com" autocomplete="email" required
+                     aria-describedby="resultado-boletin">
+            </div>
+            <button class="boton boton--acento" type="submit">Suscribirme</button>
+            <p class="boletin__resultado" id="resultado-boletin" role="status" aria-live="polite" data-resultado></p>
+          </form>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+
+      <div class="pie__rejilla">
+        <div class="pie__marca">
+          <canvas class="pie__logo" width="44" height="44" data-logo data-tamano="44"
+                  role="img" aria-label="Logotipo de NovaTech"></canvas>
+          <p class="pie__texto">Tienda de informática y gaming. Montamos, probamos y enviamos desde Valencia a toda Europa.</p>
+          <ul class="pie__contacto">
+            <li><a href="tel:+34900000000">+34 900 000 000</a></li>
+            <li><a href="mailto:hola@novatech.example">hola@novatech.example</a></li>
+            <li>Calle Mayor 1, 46001 Valencia</li>
+          </ul>
+        </div>
+
+        <nav class="pie__columna" aria-label="Comprar">
+          <h2 class="pie__titulo">Comprar</h2>
+          <ul class="pie__lista">
+              <li><a href="catalogo.html">Todo el catálogo</a></li>
+              <li><a href="catalogo.html?oferta=si">Ofertas</a></li>
+              <li><a href="catalogo.html?categoria=equipos">PCs montados</a></li>
+              <li><a href="catalogo.html?categoria=perifericos">Periféricos</a></li>
+          </ul>
+        </nav>
+
+        <nav class="pie__columna" aria-label="Ayuda">
+          <h2 class="pie__titulo">Ayuda</h2>
+          <ul class="pie__lista">
+              <li><a href="carrito.html">Estado de mi pedido</a></li>
+              <li><a href="index.html#faq">Envíos y plazos</a></li>
+              <li><a href="index.html#faq">Devoluciones</a></li>
+              <li><a href="index.html#faq">Garantía</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <nav class="pie__columna" aria-label="Legal">
+          <h2 class="pie__titulo">Legal</h2>
+          <ul class="pie__lista">
+              <li><a href="#">Aviso legal</a></li>
+              <li><a href="#">Privacidad</a></li>
+              <li><a href="#">Cookies</a></li>
+              <li><a href="#">Condiciones de venta</a></li>
+          </ul>
+        </nav>
+
+        <div class="pie__redes">
+          <h2 class="pie__titulo">Síguenos</h2>
+          <ul class="redes">
+            <li><a class="redes__enlace" href="#" aria-label="Twitch"><span aria-hidden="true">tw</span></a></li>
+            <li><a class="redes__enlace" href="#" aria-label="YouTube"><span aria-hidden="true">yt</span></a></li>
+            <li><a class="redes__enlace" href="#" aria-label="Instagram"><span aria-hidden="true">ig</span></a></li>
+            <li><a class="redes__enlace" href="#" aria-label="Discord"><span aria-hidden="true">dc</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pie__legal">
+        <p>© 2026 NovaTech. Todos los derechos reservados.</p>
+        <ul class="pie__pagos">
+          <li>Visa</li>
+          <li>Mastercard</li>
+          <li>PayPal</li>
+          <li>Bizum</li>
+          <li>A plazos</li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/principal.js" defer></script>
+  <script src="js/recursos.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 420" width="640" height="420" role="presentation">
+
+  <defs>
+    <linearGradient id="fondo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#171a24"/>
+      <stop offset="1" stop-color="#0b0c10"/>
+    </linearGradient>
+    <radialGradient id="brillo" cx="0.7" cy="0.3" r="0.6">
+      <stop offset="0" stop-color="#7c5cff" stop-opacity="0.35"/>
+      <stop offset="1" stop-color="#7c5cff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <rect width="640" height="420" fill="url(#fondo)"/>
+  <rect width="640" height="420" fill="url(#brillo)"/>
+  <rect x="32" y="33.6" width="576" height="243.6" rx="8" fill="#13151c" stroke="#3a4050" stroke-width="2"/>
+  <rect x="41" y="42.6" width="558" height="225.6" rx="4" fill="#0b0c10"/>
+  <path d="M58 251.2 l115.2 -73.08 l92.16 34.104 l138.24 -92.568"
+        fill="none" stroke="#a78bfa" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+  <rect x="312" y="277.2" width="16" height="58.800000000000004" fill="#3a4050"/>
+  <rect x="193.28" y="336" width="253.44" height="8" rx="4" fill="#3a4050"/>
+  <rect x="204.79999999999998" y="263.2" width="230.4" height="3" rx="1.5" fill="#67e8f9" opacity="0.8"/>
+  <text x="320" y="390" text-anchor="middle" font-family="Outfit, sans-serif" font-size="26" font-weight="600" fill="#8b90a3">144 Hz · 240 Hz · 4K</text>
+</svg>

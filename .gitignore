@@ -1,0 +1,9 @@
+# Dependencias
+node_modules/
+
+# Datos generados por la tienda (pedidos y suscripciones de personas reales)
+almacenamiento/*.json
+
+# Variables de entorno y registros
+.env
+*.log

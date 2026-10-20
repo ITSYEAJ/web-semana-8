@@ -1,0 +1,1169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Catálogo — NovaTech</title>
+  <meta name="description" content="Todos nuestros productos de componentes, gaming y ordenadores.">
+  <meta name="theme-color" content="#0b0c10">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Catálogo — NovaTech">
+  <meta property="og:description" content="Todos nuestros productos de componentes, gaming y ordenadores.">
+  <meta property="og:image" content="img/portada.svg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <!-- Enlace para saltar al contenido: solo se ve al navegar con el teclado. -->
+  <a class="salto-contenido" href="#principal">Saltar al contenido</a>
+
+  <p class="aviso-superior">Envío gratis en pedidos de más de 99 € · Montaje y prueba de estrés incluidos</p>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__interior">
+
+      <a class="marca" href="index.html">
+        <canvas class="marca__logo" id="logo" width="40" height="40" data-logo data-tamano="40"
+                role="img" aria-label="Logotipo de NovaTech: una N sobre un chip violeta y cian"></canvas>
+        <span class="marca__texto">NovaTech</span>
+      </a>
+
+      <!-- Buscador: formulario normal, la búsqueda se lee en catalogo.html -->
+      <form class="buscador" action="catalogo.html" method="get" role="search">
+        <label class="solo-lectores" for="buscar">Buscar productos</label>
+        <input class="buscador__campo" type="search" id="buscar" name="buscar"
+               placeholder="Buscar tarjeta gráfica, monitor, teclado…">
+        <button class="buscador__boton" type="submit">
+          <span aria-hidden="true">🔍</span>
+          <span class="solo-lectores">Buscar</span>
+        </button>
+      </form>
+
+      <div class="cabecera__acciones">
+        <a class="carrito-enlace" href="carrito.html">
+          <span class="carrito-enlace__icono" aria-hidden="true">🛒</span>
+          <span class="carrito-enlace__texto">
+            Carrito
+            <strong data-carrito-total>0,00 €</strong>
+          </span>
+          <span class="carrito-enlace__contador" data-carrito-contador hidden>0</span>
+          <span class="solo-lectores" data-carrito-resumen>Carrito vacío</span>
+        </a>
+
+        <button class="menu-boton" type="button"
+                aria-expanded="false" aria-controls="menu-principal" data-menu-boton>
+          <span class="menu-boton__barras" aria-hidden="true"></span>
+          <span class="solo-lectores">Abrir menú de navegación</span>
+        </button>
+      </div>
+
+      <nav class="navegacion" id="menu-principal" aria-label="Navegación principal" data-menu>
+        <ul class="navegacion__lista">
+          <li><a class="navegacion__enlace navegacion__enlace--activo" href="catalogo.html">Catálogo</a></li>
+          <li><a class="navegacion__enlace" href="catalogo.html?categoria=graficas">Tarjetas gráficas</a></li>
+          <li><a class="navegacion__enlace" href="catalogo.html?categoria=equipos">PCs montados</a></li>
+          <li><a class="navegacion__enlace" href="catalogo.html?categoria=portatiles">Portátiles</a></li>
+          <li><a class="navegacion__enlace" href="catalogo.html?oferta=si">Ofertas</a></li>
+          <li><a class="navegacion__enlace" href="contacto.html">Contacto</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="principal">
+
+    <div class="contenedor">
+      <nav class="migas" aria-label="Estás aquí">
+        <ol>
+          <li><a href="index.html">Inicio</a></li>
+          <li aria-current="page">Catálogo</li>
+        </ol>
+      </nav>
+    </div>
+
+    <div class="contenedor catalogo">
+
+      <!-- ============ Filtros ============ -->
+      <aside class="filtros" aria-labelledby="filtros-titulo">
+        <h2 class="filtros__titulo" id="filtros-titulo">Filtrar</h2>
+
+        <!--
+          Es un formulario normal: al enviarlo recarga la página con los filtros
+          en la dirección (catalogo.html?categoria=graficas). El JavaScript los
+          lee al cargar y también los aplica al vuelo, sin recargar.
+        -->
+        <form class="filtros__formulario" action="catalogo.html" method="get" data-filtros>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="filtro-categoria">Categoría</label>
+            <select class="campo__control" id="filtro-categoria" name="categoria">
+              <option value="">Todas las categorías</option>
+              <option value="graficas">Tarjetas gráficas (3)</option>
+              <option value="procesadores">Procesadores (3)</option>
+              <option value="equipos">PCs montados (3)</option>
+              <option value="portatiles">Portátiles (2)</option>
+              <option value="monitores">Monitores (2)</option>
+              <option value="perifericos">Periféricos (3)</option>
+              <option value="almacenamiento">Almacenamiento (1)</option>
+              <option value="componentes">Placas y memoria (2)</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="filtro-marca">Marca</label>
+            <select class="campo__control" id="filtro-marca" name="marca">
+              <option value="">Todas las marcas</option>
+              <option value="Aureon">Aureon</option>
+              <option value="Hexon">Hexon</option>
+              <option value="Krios">Krios</option>
+              <option value="NovaTech">NovaTech</option>
+              <option value="Nytro">Nytro</option>
+              <option value="Voltex">Voltex</option>
+              <option value="Zephir">Zephir</option>
+            </select>
+          </div>
+
+          <div class="campo">
+            <label class="campo__etiqueta" for="filtro-precio">
+              Precio máximo:
+              <output data-salida-precio>1500 €</output>
+            </label>
+            <input class="campo__rango" type="range" id="filtro-precio" name="precioMax"
+                   min="50" max="1500" step="50" value="1500" data-rango-precio>
+          </div>
+
+          <div class="campo campo--casilla">
+            <input type="checkbox" id="filtro-oferta" name="oferta" value="si">
+            <label for="filtro-oferta">Solo productos en oferta</label>
+          </div>
+
+          <div class="filtros__acciones">
+            <button class="boton boton--acento" type="submit">Aplicar</button>
+            <a class="enlace-simple" href="catalogo.html">Quitar filtros</a>
+          </div>
+        </form>
+      </aside>
+
+      <!-- ============ Resultados ============ -->
+      <section class="resultados" aria-labelledby="resultados-titulo">
+
+        <header class="resultados__cabecera">
+          <div>
+            <h1 class="resultados__titulo" id="resultados-titulo" data-titulo-resultados>Todo el catálogo</h1>
+            <p class="resultados__contador" data-contador>19 productos</p>
+          </div>
+
+          <form class="orden" action="catalogo.html" method="get" data-orden>
+            <label class="campo__etiqueta" for="orden">Ordenar por</label>
+            <select class="campo__control" id="orden" name="orden">
+              <option value="relevancia">Relevancia</option>
+              <option value="precio-asc">Precio: de menor a mayor</option>
+              <option value="precio-desc">Precio: de mayor a menor</option>
+              <option value="valoracion">Mejor valorados</option>
+              <option value="nombre">Nombre (A-Z)</option>
+            </select>
+            <button class="boton boton--contorno boton--pequeno" type="submit">Ordenar</button>
+          </form>
+        </header>
+
+        <!-- Mensaje que aparece cuando ningún producto encaja con los filtros. -->
+        <div class="vacio" data-vacio hidden>
+          <p class="vacio__titulo">No hemos encontrado ningún producto con esos filtros.</p>
+          <p class="vacio__texto">Prueba a ampliar el precio máximo o a quitar algún filtro.</p>
+          <a class="boton boton--acento" href="catalogo.html">Ver todo el catálogo</a>
+        </div>
+
+        <!--
+          Los 19 productos están escritos aquí en HTML.
+          Para añadir uno nuevo, copia un <li> entero y cambia sus datos.
+          Los atributos data-* son los que usa el filtro.
+        -->
+        <ul class="rejilla-productos" data-lista>
+          <li>
+            <article class="producto" data-producto
+                     data-categoria="graficas" data-marca="Nytro"
+                     data-precio="549.9" data-valoracion="4.7"
+                     data-oferta="si" data-nombre="Nytro RX-7800 XT 16 GB">
+
+              <div class="producto__media">
+                <a href="productos/nytro-rx-7800-xt-16gb.html" tabindex="-1" aria-hidden="true">
+                  <img src="img/prod-grafica-1.svg" alt="" width="640" height="480" loading="lazy">
+                </a>
+                <ul class="producto__distintivos">
+                  <li class="distintivo distintivo--oferta">-11 %</li>
+                </ul>
+              </div>
+
+              <div class="producto__cuerpo">
+                <p class="producto__marca">Nytro</p>
+                <h3 class="producto__nombre"><a href="productos/nytro-rx-7800-xt-16gb.html">Nytro RX-7800 XT 16 GB</a></h3>
+
+                <p class="valoracion">
+                  <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                  <span class="valoracion__texto">
+                    4,7
+                    <span class="solo-lectores">de 5,</span> (214 opiniones)
+                  </span>
+                </p>
+
+                <p class="producto__resumen">Tarjeta gráfica de 16 GB pensada para jugar en 1440p a 144 Hz sin bajar la calidad.</p>
+
+                <p class="producto__precios">
+                  <span class="producto__precio">549,90 €</span>
+                  <s class="producto__precio-anterior"><span class="solo-lectores">Antes</span> 619,90 €</s>
+                </p>
+
+                <p class="stock stock--disponible">En stock</p>
+
+                <button class="boton boton--acento" type="button" data-anadir
+                        data-slug="nytro-rx-7800-xt-16gb" data-nombre="Nytro RX-7800 XT 16 GB" data-precio="549.9"
+                        data-imagen="img/prod-grafica-1.svg" data-stock="12"
+                        >
+                  Añadir al carrito
+                  <span class="solo-lectores">: Nytro RX-7800 XT 16 GB</span>
+                </button>
+              </div>
+
+            </article>
+          </li>
+          <li>
+            <article class="producto" data-producto
+                     data-categoria="graficas" data-marca="Voltex"
+                     data-precio="649" data-valoracion="4.8"
+                     data-oferta="no" data-nombre="Voltex GTX-4070 Super 12 GB">
+
+              <div class="producto__media">
+                <a href="productos/voltex-gtx-4070-super-12gb.html" tabindex="-1" aria-hidden="true">
+                  <img src="img/prod-grafica-2.svg" alt="" width="640" height="480" loading="lazy">
+                </a>
+                <ul class="producto__distintivos">
+                  <li class="distintivo distintivo--nuevo">Nuevo</li>
+                </ul>
+              </div>
+
+              <div class="producto__cuerpo">
+                <p class="producto__marca">Voltex</p>
+                <h3 class="producto__nombre"><a href="productos/voltex-gtx-4070-super-12gb.html">Voltex GTX-4070 Super 12 GB</a></h3>
+
+                <p class="valoracion">
+                  <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                  <span class="valoracion__texto">
+                    4,8
+                    <span class="solo-lectores">de 5,</span> (158 opiniones)
+                  </span>
+                </p>
+
+                <p class="producto__resumen">Gráfica de gama alta con trazado de rayos y escalado por IA para 1440p y 4K.</p>
+
+                <p class="producto__precios">
+                  <span class="producto__precio">649,00 €</span>
+                  
+                </p>
+
+                <p class="stock stock--disponible">En stock</p>
+
+                <button class="boton boton--acento" type="button" data-anadir
+                        data-slug="voltex-gtx-4070-super-12gb" data-nombre="Voltex GTX-4070 Super 12 GB" data-precio="649"
+                        data-imagen="img/prod-grafica-2.svg" data-stock="7"
+                        >
+                  Añadir al carrito
+                  <span class="solo-lectores">: Voltex GTX-4070 Super 12 GB</span>
+                </button>
+              </div>
+
+            </article>
+          </li>
+          <li>
+            <article class="producto" data-producto
+                     data-categoria="graficas" data-marca="Nytro"
+                     data-precio="289" data-valoracion="4.4"
+                     data-oferta="si" data-nombre="Nytro RX-7600 8 GB">
+
+              <div class="producto__media">
+                <a href="productos/nytro-rx-7600-8gb.html" tabindex="-1" aria-hidden="true">
+                  <img src="img/prod-grafica-2.svg" alt="" width="640" height="480" loading="lazy">
+                </a>
+                <ul class="producto__distintivos">
+                  <li class="distintivo distintivo--oferta">-9 %</li>
+                </ul>
+              </div>
+
+              <div class="producto__cuerpo">
+                <p class="producto__marca">Nytro</p>
+                <h3 class="producto__nombre"><a href="productos/nytro-rx-7600-8gb.html">Nytro RX-7600 8 GB</a></h3>
+
+                <p class="valoracion">
+                  <span class="valoracion__estrellas" aria-hidden="true">★★★★☆</span>
+                  <span class="valoracion__texto">
+                    4,4
+                    <span class="solo-lectores">de 5,</span> (96 opiniones)
+                  </span>
+                </p>
+
+                <p class="producto__resumen">La opción equilibrada para jugar en 1080p a 144 Hz con un consumo muy bajo.</p>
+
+                <p class="producto__precios">
+                  <span class="producto__precio">289,00 €</span>
+                  <s class="producto__precio-anterior"><span class="solo-lectores">Antes</span> 319,00 €</s>
+                </p>
+
+                <p class="stock stock--disponible">En stock</p>
+
+                <button class="boton boton--acento" type="button" data-anadir
+                        data-slug="nytro-rx-7600-8gb" data-nombre="Nytro RX-7600 8 GB" data-precio="289"
+                        data-imagen="img/prod-grafica-2.svg" data-stock="25"
+                        >
+                  Añadir al carrito
+                  <span class="solo-lectores">: Nytro RX-7600 8 GB</span>
+                </button>
+              </div>
+
+            </article>
+          </li>
+          <li>
+            <article class="producto" data-producto
+                     data-categoria="procesadores" data-marca="Krios"
+                     data-precio="379" data-valoracion="4.9"
+                     data-oferta="si" data-nombre="Krios K7-7800X3D">
+
+              <div class="producto__media">
+                <a href="productos/krios-k7-7800x3d.html" tabindex="-1" aria-hidden="true">
+                  <img src="img/prod-cpu.svg" alt="" width="640" height="480" loading="lazy">
+                </a>
+                <ul class="producto__distintivos">
+                  <li class="distintivo distintivo--oferta">-12 %</li>
+                </ul>
+              </div>
+
+              <div class="producto__cuerpo">
+                <p class="producto__marca">Krios</p>
+                <h3 class="producto__nombre"><a href="productos/krios-k7-7800x3d.html">Krios K7-7800X3D</a></h3>
+
+                <p class="valoracion">
+                  <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                  <span class="valoracion__texto">
+                    4,9
+                    <span class="solo-lectores">de 5,</span> (341 opiniones)
+                  </span>
+                </p>
+
+                <p class="producto__resumen">El procesador más rápido para jugar gracias a sus 96 MB de caché apilada.</p>
+
+                <p class="producto__precios">
+                  <span class="producto__precio">379,00 €</span>
+                  <s class="producto__precio-anterior"><span class="solo-lectores">Antes</span> 429,00 €</s>
+                </p>
+
+                <p class="stock stock--disponible">En stock</p>
+
+                <button class="boton boton--acento" type="button" data-anadir
+                        data-slug="krios-k7-7800x3d" data-nombre="Krios K7-7800X3D" data-precio="379"
+                        data-imagen="img/prod-cpu.svg" data-stock="15"
+                        >
+                  Añadir al carrito
+                  <span class="solo-lectores">: Krios K7-7800X3D</span>
+                </button>
+              </div>
+
+            </article>
+          </li>
+          <li>
+            <article class="producto" data-producto
+                     data-categoria="procesadores" data-marca="Krios"
+                     data-precio="199" data-valoracion="4.6"
+                     data-oferta="no" data-nombre="Krios K5-7600">
+
+              <div class="producto__media">
+                <a href="productos/krios-k5-7600.html" tabindex="-1" aria-hidden="true">
+                  <img src="img/prod-cpu.svg" alt="" width="640" height="480" loading="lazy">
+                </a>
+                <ul class="producto__distintivos">
+                  
+                </ul>
+              </div>
+
+              <div class="producto__cuerpo">
+                <p class="producto__marca">Krios</p>
+                <h3 class="producto__nombre"><a href="productos/krios-k5-7600.html">Krios K5-7600</a></h3>
+
+                <p class="valoracion">
+                  <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                  <span class="valoracion__texto">
+                    4,6
+                    <span class="solo-lectores">de 5,</span> (187 opiniones)
+                  </span>
+                </p>
+
+                <p class="producto__resumen">Seis núcleos más que suficientes para jugar y trabajar, con disipador incluido.</p>
+
+                <p class="producto__precios">
+                  <span class="producto__precio">199,00 €</span>
+                  
+                </p>
+
+                <p class="stock stock--disponible">En stock</p>
+
+                <button class="boton boton--acento" type="button" data-anadir
+                        data-slug="krios-k5-7600" data-nombre="Krios K5-7600" data-precio="199"
+                        data-imagen="img/prod-cpu.svg" data-stock="30"
+                        >
+                  Añadir al carrito
+                  <span class="solo-lectores">: Krios K5-7600</span>
+                </button>
+              </div>
+
+            </article>
+          </li>
+          <li>
+            <article class="producto" data-producto
+                     data-categoria="procesadores" data-marca="Hexon"
+                     data-precio="409" data-valoracion="4.5"
+                     data-oferta="no" data-nombre="Hexon i7-14700K">
+
+              <div class="producto__media">
+                <a href="productos/hexon-i7-14700k.html" tabindex="-1" aria-hidden="true">
+                  <img src="img/prod-cpu.svg" alt="" width="640" height="480" loading="lazy">
+                </a>
+                <ul class="producto__distintivos">
+                  
+                </ul>
+              </div>
+
+              <div class="producto__cuerpo">
+                <p class="producto__marca">Hexon</p>
+                <h3 class="producto__nombre"><a href="productos/hexon-i7-14700k.html">Hexon i7-14700K</a></h3>
+
+                <p class="valoracion">
+                  <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                  <span class="valoracion__texto">
+                    4,5
+                    <span class="solo-lectores">de 5,</span> (122 opiniones)
+                  </span>
+                </p>
+
+                <p class="producto__resumen">Veinte núcleos para quien además de jugar edita vídeo o compila código.</p>
+
+                <p class="producto__precios">
+                  <span class="producto__precio">409,00 €</span>
+                  
+                </p>
+
+                <p class="stock stock--disponible">En stock</p>
+
+                <button class="boton boton--acento" type="button" data-anadir
+                        data-slug="hexon-i7-14700k" data-nombre="Hexon i7-14700K" data-precio="409"
+                        data-imagen="img/prod-cpu.svg" data-stock="9"
+                        >
+                  Añadir al carrito
+                  <span class="solo-lectores">: Hexon i7-14700K</span>
+                </button>
+              </div>
+
+            </article>
+          </li>
+          <li>
+            <article class="producto" data-producto
+                     data-categoria="equipos" data-marca="NovaTech"
+                     data-precio="999" data-valoracion="4.8"
+                     data-oferta="si" data-nombre="NovaTech Arena 5">
+
+              <div class="producto__media">
+                <a href="productos/novatech-arena-5.html" tabindex="-1" aria-hidden="true">
+                  <img src="img/prod-equipo.svg" alt="" width="640" height="480" loading="lazy">
+                </a>
+                <ul class="producto__distintivos">
+                  <li class="distintivo distintivo--oferta">-15 %</li>
+                </ul>
+              </div>
+
+              <div class="producto__cuerpo">
+                <p class="producto__marca">NovaTech</p>
+                <h3 class="producto__nombre"><a href="productos/novatech-arena-5.html">NovaTech Arena 5</a></h3>
+
+                <p class="valoracion">
+                  <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                  <span class="valoracion__texto">
+                    4,8
+                    <span class="solo-lectores">de 5,</span> (87 opiniones)
+                  </span>
+                </p>
+
+                <p class="producto__resumen">Equipo montado y probado para jugar en 1440p. Llega listo para enchufar.</p>
+
+                <p class="producto__precios">
+                  <span class="producto__precio">999,00 €</span>
+                  <s class="producto__precio-anterior"><span class="solo-lectores">Antes</span> 1179,00 €</s>
+                </p>
+
+                <p class="stock stock--pocas">Últimas 5 unidades</p>
+
+                <button class="boton boton--acento" type="button" data-anadir
+                        data-slug="novatech-arena-5" data-nombre="NovaTech Arena 5" data-precio="999"
+                        data-imagen="img/prod-equipo.svg" data-stock="5"
+                        >
+                  Añadir al carrito
+                  <span class="solo-lectores">: NovaTech Arena 5</span>
+                </button>
+              </div>
+
+            </article>
+          </li>
+          <li>
+            <article class="producto" data-producto
+                     data-categoria="equipos" data-marca="NovaTech"
+                     data-precio="1499" data-valoracion="4.9"
+                     data-oferta="si" data-nombre="NovaTech Arena 7">
+
+              <div class="producto__media">
+                <a href="productos/novatech-arena-7.html" tabindex="-1" aria-hidden="true">
+                  <img src="img/prod-equipo.svg" alt="" width="640" height="480" loading="lazy">
+                </a>
+                <ul class="producto__distintivos">
+                  <li class="distintivo distintivo--oferta">-14 %</li>
+                </ul>
+              </div>
+
+              <div class="producto__cuerpo">
+                <p class="producto__marca">NovaTech</p>
+                <h3 class="producto__nombre"><a href="productos/novatech-arena-7.html">NovaTech Arena 7</a></h3>
+
+                <p class="valoracion">
+                  <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                  <span class="valoracion__texto">
+                    4,9
+                    <span class="solo-lectores">de 5,</span> (64 opiniones)
+                  </span>
+                </p>
+
+                <p class="producto__resumen">Nuestro equipo más vendido para 4K, con refrigeración líquida de 240 mm.</p>
+
+                <p class="producto__precios">
+                  <span class="producto__precio">1499,00 €</span>
+                  <s class="producto__precio-anterior"><span class="solo-lectores">Antes</span> 1749,00 €</s>
+                </p>
+
+                <p class="stock stock--pocas">Últimas 3 unidades</p>
+
+                <button class="boton boton--acento" type="button" data-anadir
+                        data-slug="novatech-arena-7" data-nombre="NovaTech Arena 7" data-precio="1499"
+                        data-imagen="img/prod-equipo.svg" data-stock="3"
+                        >
+                  Añadir al carrito
+                  <span class="solo-lectores">: NovaTech Arena 7</span>
+                </button>
+              </div>
+
+            </article>
+          </li>
+          <li>
+            <article class="producto" data-producto
+                     data-categoria="equipos" data-marca="NovaTech"
+                     data-precio="799" data-valoracion="4.6"
+                     data-oferta="no" data-nombre="NovaTech Studio Mini">
+
+              <div class="producto__media">
+                <a href="productos/novatech-studio-mini.html" tabindex="-1" aria-hidden="true">
+                  <img src="img/prod-equipo.svg" alt="" width="640" height="480" loading="lazy">
+                </a>
+                <ul class="producto__distintivos">
+                  <li class="distintivo distintivo--nuevo">Nuevo</li>
+                </ul>
+              </div>
+
+              <div class="producto__cuerpo">
+                <p class="producto__marca">NovaTech</p>
+                <h3 class="producto__nombre"><a href="productos/novatech-studio-mini.html">NovaTech Studio Mini</a></h3>
+
+                <p class="valoracion">
+                  <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                  <span class="valoracion__texto">
+                    4,6
+                    <span class="solo-lectores">de 5,</span> (31 opiniones)
+                  </span>
+                </p>
+
+                <p class="producto__resumen">Ordenador compacto y silencioso para trabajar, del tamaño de una caja de zapatos.</p>
+
+                <p class="producto__precios">
+                  <span class="producto__precio">799,00 €</span>
+                  
+                </p>
+
+                <p class="stock stock--disponible">En stock</p>
+
+                <button class="boton boton--acento" type="button" data-anadir
+                        data-slug="novatech-studio-mini" data-nombre="NovaTech Studio Mini" data-precio="799"
+                        data-imagen="img/prod-equipo.svg" data-stock="6"
+                        >
+                  Añadir al carrito
+                  <span class="solo-lectores">: NovaTech Studio Mini</span>
+                </button>
+              </div>
+
+            </article>
+          </li>
+          <li>
+            <article class="producto" data-producto
+                     data-categoria="portatiles" data-marca="Zephir"
+                     data-precio="1299" data-valoracion="4.7"
+                     data-oferta="si" data-nombre="Zephir Blade 15 RTX">
+
+              <div class="producto__media">
+                <a href="productos/zephir-blade-15-rtx.html" tabindex="-1" aria-hidden="true">
+                  <img src="img/prod-portatil.svg" alt="" width="640" height="480" loading="lazy">
+                </a>
+                <ul class="producto__distintivos">
+                  <li class="distintivo distintivo--oferta">-10 %</li>
+                          <li class="distintivo distintivo--nuevo">Nuevo</li>
+                </ul>
+              </div>
+
+              <div class="producto__cuerpo">
+                <p class="producto__marca">Zephir</p>
+                <h3 class="producto__nombre"><a href="productos/zephir-blade-15-rtx.html">Zephir Blade 15 RTX</a></h3>
+
+                <p class="valoracion">
+                  <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                  <span class="valoracion__texto">
+                    4,7
+                    <span class="solo-lectores">de 5,</span> (73 opiniones)
+                  </span>
+                </p>
+
+                <p class="producto__resumen">Portátil gaming de 15,6" y 165 Hz con gráfica dedicada y chasis de aluminio.</p>
+
+                <p class="producto__precios">
+                  <span class="producto__precio">1299,00 €</span>
+                  <s class="producto__precio-anterior"><span class="solo-lectores">Antes</span> 1449,00 €</s>
+                </p>
+
+                <p class="stock stock--disponible">En stock</p>
+
+                <button class="boton boton--acento" type="button" data-anadir
+                        data-slug="zephir-blade-15-rtx" data-nombre="Zephir Blade 15 RTX" data-precio="1299"
+                        data-imagen="img/prod-portatil.svg" data-stock="8"
+                        >
+                  Añadir al carrito
+                  <span class="solo-lectores">: Zephir Blade 15 RTX</span>
+                </button>
+              </div>
+
+            </article>
+          </li>
+          <li>
+            <article class="producto" data-producto
+                     data-categoria="portatiles" data-marca="Zephir"
+                     data-precio="899" data-valoracion="4.5"
+                     data-oferta="no" data-nombre="Zephir Air 14">
+
+              <div class="producto__media">
+                <a href="productos/zephir-air-14.html" tabindex="-1" aria-hidden="true">
+                  <img src="img/prod-portatil.svg" alt="" width="640" height="480" loading="lazy">
+                </a>
+                <ul class="producto__distintivos">
+                  
+                </ul>
+              </div>
+
+              <div class="producto__cuerpo">
+                <p class="producto__marca">Zephir</p>
+                <h3 class="producto__nombre"><a href="productos/zephir-air-14.html">Zephir Air 14</a></h3>
+
+                <p class="valoracion">
+                  <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                  <span class="valoracion__texto">
+                    4,5
+                    <span class="solo-lectores">de 5,</span> (112 opiniones)
+                  </span>
+                </p>
+
+                <p class="producto__resumen">Ultraligero de 1,2 kg con 14 horas de batería para estudiar o trabajar.</p>
+
+                <p class="producto__precios">
+                  <span class="producto__precio">899,00 €</span>
+                  
+                </p>
+
+                <p class="stock stock--disponible">En stock</p>
+
+                <button class="boton boton--acento" type="button" data-anadir
+                        data-slug="zephir-air-14" data-nombre="Zephir Air 14" data-precio="899"
+                        data-imagen="img/prod-portatil.svg" data-stock="11"
+                        >
+                  Añadir al carrito
+                  <span class="solo-lectores">: Zephir Air 14</span>
+                </button>
+              </div>
+
+            </article>
+          </li>
+          <li>
+            <article class="producto" data-producto
+                     data-categoria="monitores" data-marca="Aureon"
+                     data-precio="279" data-valoracion="4.6"
+                     data-oferta="si" data-nombre="Aureon View 27 QHD 165 Hz">
+
+              <div class="producto__media">
+                <a href="productos/aureon-view-27-qhd.html" tabindex="-1" aria-hidden="true">
+                  <img src="img/prod-monitor.svg" alt="" width="640" height="480" loading="lazy">
+                </a>
+                <ul class="producto__distintivos">
+                  <li class="distintivo distintivo--oferta">-15 %</li>
+                </ul>
+              </div>
+
+              <div class="producto__cuerpo">
+                <p class="producto__marca">Aureon</p>
+                <h3 class="producto__nombre"><a href="productos/aureon-view-27-qhd.html">Aureon View 27 QHD 165 Hz</a></h3>
+
+                <p class="valoracion">
+                  <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                  <span class="valoracion__texto">
+                    4,6
+                    <span class="solo-lectores">de 5,</span> (203 opiniones)
+                  </span>
+                </p>
+
+                <p class="producto__resumen">Monitor de 27" y 1440p a 165 Hz, el punto dulce para jugar hoy.</p>
+
+                <p class="producto__precios">
+                  <span class="producto__precio">279,00 €</span>
+                  <s class="producto__precio-anterior"><span class="solo-lectores">Antes</span> 329,00 €</s>
+                </p>
+
+                <p class="stock stock--disponible">En stock</p>
+
+                <button class="boton boton--acento" type="button" data-anadir
+                        data-slug="aureon-view-27-qhd" data-nombre="Aureon View 27 QHD 165 Hz" data-precio="279"
+                        data-imagen="img/prod-monitor.svg" data-stock="18"
+                        >
+                  Añadir al carrito
+                  <span class="solo-lectores">: Aureon View 27 QHD 165 Hz</span>
+                </button>
+              </div>
+
+            </article>
+          </li>
+          <li>
+            <article class="producto" data-producto
+                     data-categoria="monitores" data-marca="Aureon"
+                     data-precio="549" data-valoracion="4.7"
+                     data-oferta="no" data-nombre="Aureon View 32 4K 144 Hz">
+
+              <div class="producto__media">
+                <a href="productos/aureon-view-32-4k.html" tabindex="-1" aria-hidden="true">
+                  <img src="img/prod-monitor.svg" alt="" width="640" height="480" loading="lazy">
+                </a>
+                <ul class="producto__distintivos">
+                  <li class="distintivo distintivo--nuevo">Nuevo</li>
+                </ul>
+              </div>
+
+              <div class="producto__cuerpo">
+                <p class="producto__marca">Aureon</p>
+                <h3 class="producto__nombre"><a href="productos/aureon-view-32-4k.html">Aureon View 32 4K 144 Hz</a></h3>
+
+                <p class="valoracion">
+                  <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                  <span class="valoracion__texto">
+                    4,7
+                    <span class="solo-lectores">de 5,</span> (58 opiniones)
+                  </span>
+                </p>
+
+                <p class="producto__resumen">32 pulgadas en 4K a 144 Hz con HDR real para consola y PC.</p>
+
+                <p class="producto__precios">
+                  <span class="producto__precio">549,00 €</span>
+                  
+                </p>
+
+                <p class="stock stock--disponible">En stock</p>
+
+                <button class="boton boton--acento" type="button" data-anadir
+                        data-slug="aureon-view-32-4k" data-nombre="Aureon View 32 4K 144 Hz" data-precio="549"
+                        data-imagen="img/prod-monitor.svg" data-stock="6"
+                        >
+                  Añadir al carrito
+                  <span class="solo-lectores">: Aureon View 32 4K 144 Hz</span>
+                </button>
+              </div>
+
+            </article>
+          </li>
+          <li>
+            <article class="producto" data-producto
+                     data-categoria="perifericos" data-marca="Hexon"
+                     data-precio="89.9" data-valoracion="4.8"
+                     data-oferta="no" data-nombre="Hexon Strike TKL">
+
+              <div class="producto__media">
+                <a href="productos/hexon-strike-tkl.html" tabindex="-1" aria-hidden="true">
+                  <img src="img/prod-teclado.svg" alt="" width="640" height="480" loading="lazy">
+                </a>
+                <ul class="producto__distintivos">
+                  
+                </ul>
+              </div>
+
+              <div class="producto__cuerpo">
+                <p class="producto__marca">Hexon</p>
+                <h3 class="producto__nombre"><a href="productos/hexon-strike-tkl.html">Hexon Strike TKL</a></h3>
+
+                <p class="valoracion">
+                  <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                  <span class="valoracion__texto">
+                    4,8
+                    <span class="solo-lectores">de 5,</span> (412 opiniones)
+                  </span>
+                </p>
+
+                <p class="producto__resumen">Teclado mecánico sin bloque numérico, con interruptores intercambiables en caliente.</p>
+
+                <p class="producto__precios">
+                  <span class="producto__precio">89,90 €</span>
+                  
+                </p>
+
+                <p class="stock stock--disponible">En stock</p>
+
+                <button class="boton boton--acento" type="button" data-anadir
+                        data-slug="hexon-strike-tkl" data-nombre="Hexon Strike TKL" data-precio="89.9"
+                        data-imagen="img/prod-teclado.svg" data-stock="40"
+                        >
+                  Añadir al carrito
+                  <span class="solo-lectores">: Hexon Strike TKL</span>
+                </button>
+              </div>
+
+            </article>
+          </li>
+          <li>
+            <article class="producto" data-producto
+                     data-categoria="perifericos" data-marca="Hexon"
+                     data-precio="59.9" data-valoracion="4.7"
+                     data-oferta="si" data-nombre="Hexon Glide Pro">
+
+              <div class="producto__media">
+                <a href="productos/hexon-glide-pro.html" tabindex="-1" aria-hidden="true">
+                  <img src="img/prod-raton.svg" alt="" width="640" height="480" loading="lazy">
+                </a>
+                <ul class="producto__distintivos">
+                  <li class="distintivo distintivo--oferta">-20 %</li>
+                </ul>
+              </div>
+
+              <div class="producto__cuerpo">
+                <p class="producto__marca">Hexon</p>
+                <h3 class="producto__nombre"><a href="productos/hexon-glide-pro.html">Hexon Glide Pro</a></h3>
+
+                <p class="valoracion">
+                  <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                  <span class="valoracion__texto">
+                    4,7
+                    <span class="solo-lectores">de 5,</span> (289 opiniones)
+                  </span>
+                </p>
+
+                <p class="producto__resumen">Ratón inalámbrico de 58 gramos con 70 horas de batería.</p>
+
+                <p class="producto__precios">
+                  <span class="producto__precio">59,90 €</span>
+                  <s class="producto__precio-anterior"><span class="solo-lectores">Antes</span> 74,90 €</s>
+                </p>
+
+                <p class="stock stock--disponible">En stock</p>
+
+                <button class="boton boton--acento" type="button" data-anadir
+                        data-slug="hexon-glide-pro" data-nombre="Hexon Glide Pro" data-precio="59.9"
+                        data-imagen="img/prod-raton.svg" data-stock="35"
+                        >
+                  Añadir al carrito
+                  <span class="solo-lectores">: Hexon Glide Pro</span>
+                </button>
+              </div>
+
+            </article>
+          </li>
+          <li>
+            <article class="producto" data-producto
+                     data-categoria="perifericos" data-marca="Aureon"
+                     data-precio="99" data-valoracion="4.4"
+                     data-oferta="no" data-nombre="Aureon Sound 7.1">
+
+              <div class="producto__media">
+                <a href="productos/aureon-sound-71.html" tabindex="-1" aria-hidden="true">
+                  <img src="img/prod-cascos.svg" alt="" width="640" height="480" loading="lazy">
+                </a>
+                <ul class="producto__distintivos">
+                  
+                </ul>
+              </div>
+
+              <div class="producto__cuerpo">
+                <p class="producto__marca">Aureon</p>
+                <h3 class="producto__nombre"><a href="productos/aureon-sound-71.html">Aureon Sound 7.1</a></h3>
+
+                <p class="valoracion">
+                  <span class="valoracion__estrellas" aria-hidden="true">★★★★☆</span>
+                  <span class="valoracion__texto">
+                    4,4
+                    <span class="solo-lectores">de 5,</span> (167 opiniones)
+                  </span>
+                </p>
+
+                <p class="producto__resumen">Auriculares con sonido envolvente y micrófono con cancelación de ruido.</p>
+
+                <p class="producto__precios">
+                  <span class="producto__precio">99,00 €</span>
+                  
+                </p>
+
+                <p class="stock stock--disponible">En stock</p>
+
+                <button class="boton boton--acento" type="button" data-anadir
+                        data-slug="aureon-sound-71" data-nombre="Aureon Sound 7.1" data-precio="99"
+                        data-imagen="img/prod-cascos.svg" data-stock="22"
+                        >
+                  Añadir al carrito
+                  <span class="solo-lectores">: Aureon Sound 7.1</span>
+                </button>
+              </div>
+
+            </article>
+          </li>
+          <li>
+            <article class="producto" data-producto
+                     data-categoria="almacenamiento" data-marca="Voltex"
+                     data-precio="149" data-valoracion="4.8"
+                     data-oferta="si" data-nombre="Voltex NVMe 2 TB Gen4">
+
+              <div class="producto__media">
+                <a href="productos/voltex-nvme-2tb-gen4.html" tabindex="-1" aria-hidden="true">
+                  <img src="img/prod-ssd.svg" alt="" width="640" height="480" loading="lazy">
+                </a>
+                <ul class="producto__distintivos">
+                  <li class="distintivo distintivo--oferta">-17 %</li>
+                </ul>
+              </div>
+
+              <div class="producto__cuerpo">
+                <p class="producto__marca">Voltex</p>
+                <h3 class="producto__nombre"><a href="productos/voltex-nvme-2tb-gen4.html">Voltex NVMe 2 TB Gen4</a></h3>
+
+                <p class="valoracion">
+                  <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                  <span class="valoracion__texto">
+                    4,8
+                    <span class="solo-lectores">de 5,</span> (356 opiniones)
+                  </span>
+                </p>
+
+                <p class="producto__resumen">SSD de 2 TB que carga los juegos en segundos y no se calienta.</p>
+
+                <p class="producto__precios">
+                  <span class="producto__precio">149,00 €</span>
+                  <s class="producto__precio-anterior"><span class="solo-lectores">Antes</span> 179,00 €</s>
+                </p>
+
+                <p class="stock stock--disponible">En stock</p>
+
+                <button class="boton boton--acento" type="button" data-anadir
+                        data-slug="voltex-nvme-2tb-gen4" data-nombre="Voltex NVMe 2 TB Gen4" data-precio="149"
+                        data-imagen="img/prod-ssd.svg" data-stock="27"
+                        >
+                  Añadir al carrito
+                  <span class="solo-lectores">: Voltex NVMe 2 TB Gen4</span>
+                </button>
+              </div>
+
+            </article>
+          </li>
+          <li>
+            <article class="producto" data-producto
+                     data-categoria="componentes" data-marca="Krios"
+                     data-precio="179" data-valoracion="4.5"
+                     data-oferta="no" data-nombre="Krios B760 Pro">
+
+              <div class="producto__media">
+                <a href="productos/krios-b760-pro.html" tabindex="-1" aria-hidden="true">
+                  <img src="img/prod-placa.svg" alt="" width="640" height="480" loading="lazy">
+                </a>
+                <ul class="producto__distintivos">
+                  
+                </ul>
+              </div>
+
+              <div class="producto__cuerpo">
+                <p class="producto__marca">Krios</p>
+                <h3 class="producto__nombre"><a href="productos/krios-b760-pro.html">Krios B760 Pro</a></h3>
+
+                <p class="valoracion">
+                  <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                  <span class="valoracion__texto">
+                    4,5
+                    <span class="solo-lectores">de 5,</span> (98 opiniones)
+                  </span>
+                </p>
+
+                <p class="producto__resumen">Placa base con Wi-Fi 6E, tres ranuras M.2 y fase de alimentación reforzada.</p>
+
+                <p class="producto__precios">
+                  <span class="producto__precio">179,00 €</span>
+                  
+                </p>
+
+                <p class="stock stock--disponible">En stock</p>
+
+                <button class="boton boton--acento" type="button" data-anadir
+                        data-slug="krios-b760-pro" data-nombre="Krios B760 Pro" data-precio="179"
+                        data-imagen="img/prod-placa.svg" data-stock="14"
+                        >
+                  Añadir al carrito
+                  <span class="solo-lectores">: Krios B760 Pro</span>
+                </button>
+              </div>
+
+            </article>
+          </li>
+          <li>
+            <article class="producto" data-producto
+                     data-categoria="componentes" data-marca="Voltex"
+                     data-precio="119" data-valoracion="4.7"
+                     data-oferta="si" data-nombre="Voltex Fury 32 GB DDR5 6000">
+
+              <div class="producto__media">
+                <a href="productos/voltex-fury-32gb-ddr5.html" tabindex="-1" aria-hidden="true">
+                  <img src="img/prod-ram.svg" alt="" width="640" height="480" loading="lazy">
+                </a>
+                <ul class="producto__distintivos">
+                  <li class="distintivo distintivo--oferta">-14 %</li>
+                </ul>
+              </div>
+
+              <div class="producto__cuerpo">
+                <p class="producto__marca">Voltex</p>
+                <h3 class="producto__nombre"><a href="productos/voltex-fury-32gb-ddr5.html">Voltex Fury 32 GB DDR5 6000</a></h3>
+
+                <p class="valoracion">
+                  <span class="valoracion__estrellas" aria-hidden="true">★★★★★</span>
+                  <span class="valoracion__texto">
+                    4,7
+                    <span class="solo-lectores">de 5,</span> (241 opiniones)
+                  </span>
+                </p>
+
+                <p class="producto__resumen">Kit de 2 × 16 GB a 6000 MHz, la frecuencia ideal para los Krios de la serie 7000.</p>
+
+                <p class="producto__precios">
+                  <span class="producto__precio">119,00 €</span>
+                  <s class="producto__precio-anterior"><span class="solo-lectores">Antes</span> 139,00 €</s>
+                </p>
+
+                <p class="stock stock--disponible">En stock</p>
+
+                <button class="boton boton--acento" type="button" data-anadir
+                        data-slug="voltex-fury-32gb-ddr5" data-nombre="Voltex Fury 32 GB DDR5 6000" data-precio="119"
+                        data-imagen="img/prod-ram.svg" data-stock="33"
+                        >
+                  Añadir al carrito
+                  <span class="solo-lectores">: Voltex Fury 32 GB DDR5 6000</span>
+                </button>
+              </div>
+
+            </article>
+          </li>
+        </ul>
+
+        <nav class="paginacion" aria-label="Paginación del catálogo" data-paginacion hidden>
+          <ul></ul>
+        </nav>
+
+      </section>
+    </div>
+
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+
+      <div class="pie__rejilla">
+        <div class="pie__marca">
+          <canvas class="pie__logo" width="44" height="44" data-logo data-tamano="44"
+                  role="img" aria-label="Logotipo de NovaTech"></canvas>
+          <p class="pie__texto">Tienda de informática y gaming. Montamos, probamos y enviamos desde Valencia a toda Europa.</p>
+          <ul class="pie__contacto">
+            <li><a href="tel:+34900000000">+34 900 000 000</a></li>
+            <li><a href="mailto:hola@novatech.example">hola@novatech.example</a></li>
+            <li>Calle Mayor 1, 46001 Valencia</li>
+          </ul>
+        </div>
+
+        <nav class="pie__columna" aria-label="Comprar">
+          <h2 class="pie__titulo">Comprar</h2>
+          <ul class="pie__lista">
+              <li><a href="catalogo.html">Todo el catálogo</a></li>
+              <li><a href="catalogo.html?oferta=si">Ofertas</a></li>
+              <li><a href="catalogo.html?categoria=equipos">PCs montados</a></li>
+              <li><a href="catalogo.html?categoria=perifericos">Periféricos</a></li>
+          </ul>
+        </nav>
+
+        <nav class="pie__columna" aria-label="Ayuda">
+          <h2 class="pie__titulo">Ayuda</h2>
+          <ul class="pie__lista">
+              <li><a href="carrito.html">Estado de mi pedido</a></li>
+              <li><a href="index.html#faq">Envíos y plazos</a></li>
+              <li><a href="index.html#faq">Devoluciones</a></li>
+              <li><a href="index.html#faq">Garantía</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <nav class="pie__columna" aria-label="Legal">
+          <h2 class="pie__titulo">Legal</h2>
+          <ul class="pie__lista">
+              <li><a href="#">Aviso legal</a></li>
+              <li><a href="#">Privacidad</a></li>
+              <li><a href="#">Cookies</a></li>
+              <li><a href="#">Condiciones de venta</a></li>
+          </ul>
+        </nav>
+
+        <div class="pie__redes">
+          <h2 class="pie__titulo">Síguenos</h2>
+          <ul class="redes">
+            <li><a class="redes__enlace" href="#" aria-label="Twitch"><span aria-hidden="true">tw</span></a></li>
+            <li><a class="redes__enlace" href="#" aria-label="YouTube"><span aria-hidden="true">yt</span></a></li>
+            <li><a class="redes__enlace" href="#" aria-label="Instagram"><span aria-hidden="true">ig</span></a></li>
+            <li><a class="redes__enlace" href="#" aria-label="Discord"><span aria-hidden="true">dc</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pie__legal">
+        <p>© 2026 NovaTech. Todos los derechos reservados.</p>
+        <ul class="pie__pagos">
+          <li>Visa</li>
+          <li>Mastercard</li>
+          <li>PayPal</li>
+          <li>Bizum</li>
+          <li>A plazos</li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/principal.js" defer></script>
+  <script src="js/recursos.js" defer></script>
+  <script src="js/catalogo.js" defer></script>
+</body>
+</html>

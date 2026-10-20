@@ -1,0 +1,15 @@
+{
+  "name": "plantilla-tienda-gaming",
+  "version": "2.0.0",
+  "description": "Plantilla de tienda online de componentes, gaming y ordenadores en HTML, CSS y JavaScript",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "node --watch server.js"
+  },
+  "keywords": ["plantilla", "html", "tienda", "ecommerce", "gaming", "componentes"],
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

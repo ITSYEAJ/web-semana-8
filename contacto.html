@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contacto — NovaTech</title>
+  <meta name="description" content="Escríbenos para resolver dudas sobre productos, presupuestos de PCs a medida, pedidos o garantías. Respondemos en menos de 24 horas laborables.">
+  <meta name="theme-color" content="#0b0c10">
+
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Contacto — NovaTech">
+  <meta property="og:description" content="Escríbenos para resolver dudas sobre productos, presupuestos de PCs a medida, pedidos o garantías. Respondemos en menos de 24 horas laborables.">
+  <meta property="og:image" content="img/portada.svg">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&display=swap">
+  <link rel="stylesheet" href="css/estilos.css">
+</head>
+<body>
+  <!-- Enlace para saltar al contenido: solo se ve al navegar con el teclado. -->
+  <a class="salto-contenido" href="#principal">Saltar al contenido</a>
+
+  <p class="aviso-superior">Envío gratis en pedidos de más de 99 € · Montaje y prueba de estrés incluidos</p>
+
+  <header class="cabecera">
+    <div class="contenedor cabecera__interior">
+
+      <a class="marca" href="index.html">
+        <canvas class="marca__logo" id="logo" width="40" height="40" data-logo data-tamano="40"
+                role="img" aria-label="Logotipo de NovaTech: una N sobre un chip violeta y cian"></canvas>
+        <span class="marca__texto">NovaTech</span>
+      </a>
+
+      <!-- Buscador: formulario normal, la búsqueda se lee en catalogo.html -->
+      <form class="buscador" action="catalogo.html" method="get" role="search">
+        <label class="solo-lectores" for="buscar">Buscar productos</label>
+        <input class="buscador__campo" type="search" id="buscar" name="buscar"
+               placeholder="Buscar tarjeta gráfica, monitor, teclado…">
+        <button class="buscador__boton" type="submit">
+          <span aria-hidden="true">🔍</span>
+          <span class="solo-lectores">Buscar</span>
+        </button>
+      </form>
+
+      <div class="cabecera__acciones">
+        <a class="carrito-enlace" href="carrito.html">
+          <span class="carrito-enlace__icono" aria-hidden="true">🛒</span>
+          <span class="carrito-enlace__texto">
+            Carrito
+            <strong data-carrito-total>0,00 €</strong>
+          </span>
+          <span class="carrito-enlace__contador" data-carrito-contador hidden>0</span>
+          <span class="solo-lectores" data-carrito-resumen>Carrito vacío</span>
+        </a>
+
+        <button class="menu-boton" type="button"
+                aria-expanded="false" aria-controls="menu-principal" data-menu-boton>
+          <span class="menu-boton__barras" aria-hidden="true"></span>
+          <span class="solo-lectores">Abrir menú de navegación</span>
+        </button>
+      </div>
+
+      <nav class="navegacion" id="menu-principal" aria-label="Navegación principal" data-menu>
+        <ul class="navegacion__lista">
+          <li><a class="navegacion__enlace" href="catalogo.html">Catálogo</a></li>
+          <li><a class="navegacion__enlace" href="catalogo.html?categoria=graficas">Tarjetas gráficas</a></li>
+          <li><a class="navegacion__enlace" href="catalogo.html?categoria=equipos">PCs montados</a></li>
+          <li><a class="navegacion__enlace" href="catalogo.html?categoria=portatiles">Portátiles</a></li>
+          <li><a class="navegacion__enlace" href="catalogo.html?oferta=si">Ofertas</a></li>
+          <li><a class="navegacion__enlace navegacion__enlace--activo" href="contacto.html" aria-current="page">Contacto</a></li>
+        </ul>
+      </nav>
+
+    </div>
+  </header>
+
+  <main id="principal">
+
+    <section class="contacto" aria-labelledby="contacto-titulo">
+      <canvas class="contacto__fondo" id="fondo" aria-hidden="true"></canvas>
+
+      <div class="contenedor">
+        <nav class="migas" aria-label="Estás aquí">
+          <ol>
+            <li><a href="index.html">Inicio</a></li>
+            <li aria-current="page">Contacto</li>
+          </ol>
+        </nav>
+
+        <header class="contacto__encabezado">
+          <h1 class="pagina__titulo" id="contacto-titulo">Escríbenos</h1>
+          <p class="contacto__ayuda">
+            ¿Dudas con un componente, quieres presupuesto para un PC a medida o necesitas ayuda con un pedido?
+            Te respondemos en menos de 24 horas laborables. Los campos marcados con
+            <span aria-hidden="true">*</span><span class="solo-lectores">asterisco</span> son obligatorios.
+          </p>
+        </header>
+
+        <div class="contacto__rejilla">
+
+          <div class="contacto__tarjeta">
+
+            <div class="resumen-errores" id="resumen-errores" role="alert" tabindex="-1" hidden>
+              <p class="resumen-errores__titulo" id="resumen-titulo"></p>
+              <ul class="resumen-errores__lista" id="resumen-lista"></ul>
+            </div>
+
+            <form class="formulario-contacto" id="formulario" novalidate>
+
+              <div class="campo">
+                <label class="campo__etiqueta" for="nombre" data-nombre="Nombre completo">
+                  Nombre completo <span class="campo__obligatorio" aria-hidden="true">*</span>
+                </label>
+                <input class="campo__control" type="text" id="nombre" name="nombre"
+                       required minlength="3" maxlength="80" autocomplete="name"
+                       aria-describedby="error-nombre">
+                <p class="error" id="error-nombre"></p>
+              </div>
+
+              <div class="campo">
+                <label class="campo__etiqueta" for="correo" data-nombre="Correo electrónico">
+                  Correo electrónico <span class="campo__obligatorio" aria-hidden="true">*</span>
+                </label>
+                <input class="campo__control" type="email" id="correo" name="correo"
+                       required maxlength="120" autocomplete="email"
+                       aria-describedby="ayuda-correo error-correo">
+                <p class="ayuda" id="ayuda-correo">Te responderemos a este correo.</p>
+                <p class="error" id="error-correo"></p>
+              </div>
+
+              <div class="campo">
+                <label class="campo__etiqueta" for="telefono" data-nombre="Teléfono">
+                  Teléfono <span class="campo__opcional">(opcional)</span>
+                </label>
+                <input class="campo__control" type="tel" id="telefono" name="telefono"
+                       pattern="[0-9]{4}-?[0-9]{4}" placeholder="8888-8888" maxlength="9"
+                       inputmode="numeric" autocomplete="tel-national"
+                       aria-describedby="ayuda-telefono error-telefono">
+                <p class="ayuda" id="ayuda-telefono">8 números, por ejemplo 8888-1234.</p>
+                <p class="error" id="error-telefono"></p>
+              </div>
+
+              <div class="campo">
+                <label class="campo__etiqueta" for="motivo" data-nombre="Motivo del mensaje">
+                  Motivo del mensaje <span class="campo__obligatorio" aria-hidden="true">*</span>
+                </label>
+                <select class="campo__control" id="motivo" name="motivo" required
+                        aria-describedby="error-motivo">
+                  <option value="">Selecciona…</option>
+                  <option value="producto">Consulta sobre un producto</option>
+                  <option value="presupuesto">Presupuesto de un PC a medida</option>
+                  <option value="pedido">Estado de mi pedido</option>
+                  <option value="garantia">Garantía o devolución</option>
+                  <option value="otro">Otro motivo</option>
+                </select>
+                <p class="error" id="error-motivo"></p>
+              </div>
+
+              <div class="campo campo--ancho">
+                <label class="campo__etiqueta" for="mensaje" data-nombre="Mensaje">
+                  Mensaje <span class="campo__obligatorio" aria-hidden="true">*</span>
+                </label>
+                <textarea class="campo__control" id="mensaje" name="mensaje" rows="5"
+                          required minlength="10" maxlength="300"
+                          aria-describedby="ayuda-mensaje contador error-mensaje"></textarea>
+                <div class="campo__pie">
+                  <p class="ayuda" id="ayuda-mensaje">Cuéntanos qué necesitas: el modelo, para qué usarás el equipo o tu número de pedido.</p>
+                  <p class="contador" id="contador">0 de 300</p>
+                </div>
+                <p class="error" id="error-mensaje"></p>
+              </div>
+
+              <div class="campo campo--ancho">
+                <div class="casilla">
+                  <input class="casilla__control" type="checkbox" id="acepto" name="acepto"
+                         required aria-describedby="error-acepto">
+                  <label class="casilla__etiqueta" for="acepto" data-nombre="Aceptación">
+                    Acepto que NovaTech me contacte por correo o por teléfono solo para responder a este mensaje.
+                    <span class="campo__obligatorio" aria-hidden="true">*</span>
+                  </label>
+                </div>
+                <p class="error" id="error-acepto"></p>
+              </div>
+
+              <div class="formulario-contacto__acciones">
+                <button class="boton boton--acento boton--grande" type="submit" id="enviar">
+                  <span data-texto>Enviar mensaje</span>
+                </button>
+                <button class="boton boton--contorno boton--grande" type="reset">Limpiar</button>
+              </div>
+
+            </form>
+
+            <section class="confirmacion" id="confirmacion" tabindex="-1" aria-labelledby="conf-titulo" hidden>
+              <p class="confirmacion__icono" aria-hidden="true">✓</p>
+              <h2 class="confirmacion__titulo" id="conf-titulo">¡Gracias, <span id="conf-nombre"></span>!</h2>
+              <p class="confirmacion__texto" id="conf-estado"></p>
+
+              <dl class="confirmacion__datos">
+                <div>
+                  <dt>Motivo</dt>
+                  <dd id="conf-motivo"></dd>
+                </div>
+                <div>
+                  <dt>Te responderemos a</dt>
+                  <dd id="conf-correo"></dd>
+                </div>
+              </dl>
+
+              <div class="confirmacion__acciones">
+                <a class="boton boton--contorno" id="conf-mailto" href="mailto:hola@novatech.example">Abrir en mi correo</a>
+                <button class="boton boton--acento" type="button" id="otro-mensaje">Escribir otro mensaje</button>
+              </div>
+            </section>
+
+          </div>
+
+          <aside class="contacto__info" aria-labelledby="info-titulo">
+            <h2 class="contacto__info-titulo" id="info-titulo">Otras formas de contactarnos</h2>
+
+            <dl class="contacto__datos">
+              <div>
+                <dt>Teléfono</dt>
+                <dd><a href="tel:+34900000000">+34 900 000 000</a></dd>
+              </div>
+              <div>
+                <dt>Correo</dt>
+                <dd><a href="mailto:hola@novatech.example">hola@novatech.example</a></dd>
+              </div>
+              <div>
+                <dt>Tienda y taller</dt>
+                <dd>Calle Mayor 1, 46001 Valencia</dd>
+              </div>
+              <div>
+                <dt>Horario</dt>
+                <dd>Lunes a viernes, de 9:00 a 19:00</dd>
+              </div>
+            </dl>
+
+            <p class="contacto__nota">
+              ¿Ya tienes un pedido? Escribe su referencia (por ejemplo, NT-2209-4821) en el mensaje y lo localizamos antes.
+            </p>
+          </aside>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="pie">
+    <div class="contenedor">
+
+      <div class="pie__rejilla">
+        <div class="pie__marca">
+          <canvas class="pie__logo" width="44" height="44" data-logo data-tamano="44"
+                  role="img" aria-label="Logotipo de NovaTech"></canvas>
+          <p class="pie__texto">Tienda de informática y gaming. Montamos, probamos y enviamos desde Valencia a toda Europa.</p>
+          <ul class="pie__contacto">
+            <li><a href="tel:+34900000000">+34 900 000 000</a></li>
+            <li><a href="mailto:hola@novatech.example">hola@novatech.example</a></li>
+            <li>Calle Mayor 1, 46001 Valencia</li>
+          </ul>
+        </div>
+
+        <nav class="pie__columna" aria-label="Comprar">
+          <h2 class="pie__titulo">Comprar</h2>
+          <ul class="pie__lista">
+              <li><a href="catalogo.html">Todo el catálogo</a></li>
+              <li><a href="catalogo.html?oferta=si">Ofertas</a></li>
+              <li><a href="catalogo.html?categoria=equipos">PCs montados</a></li>
+              <li><a href="catalogo.html?categoria=perifericos">Periféricos</a></li>
+          </ul>
+        </nav>
+
+        <nav class="pie__columna" aria-label="Ayuda">
+          <h2 class="pie__titulo">Ayuda</h2>
+          <ul class="pie__lista">
+              <li><a href="carrito.html">Estado de mi pedido</a></li>
+              <li><a href="index.html#faq">Envíos y plazos</a></li>
+              <li><a href="index.html#faq">Devoluciones</a></li>
+              <li><a href="index.html#faq">Garantía</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <nav class="pie__columna" aria-label="Legal">
+          <h2 class="pie__titulo">Legal</h2>
+          <ul class="pie__lista">
+              <li><a href="#">Aviso legal</a></li>
+              <li><a href="#">Privacidad</a></li>
+              <li><a href="#">Cookies</a></li>
+              <li><a href="#">Condiciones de venta</a></li>
+          </ul>
+        </nav>
+
+        <div class="pie__redes">
+          <h2 class="pie__titulo">Síguenos</h2>
+          <ul class="redes">
+            <li><a class="redes__enlace" href="#" aria-label="Twitch"><span aria-hidden="true">tw</span></a></li>
+            <li><a class="redes__enlace" href="#" aria-label="YouTube"><span aria-hidden="true">yt</span></a></li>
+            <li><a class="redes__enlace" href="#" aria-label="Instagram"><span aria-hidden="true">ig</span></a></li>
+            <li><a class="redes__enlace" href="#" aria-label="Discord"><span aria-hidden="true">dc</span></a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="pie__legal">
+        <p>© 2026 NovaTech. Todos los derechos reservados.</p>
+        <ul class="pie__pagos">
+          <li>Visa</li>
+          <li>Mastercard</li>
+          <li>PayPal</li>
+          <li>Bizum</li>
+          <li>A plazos</li>
+        </ul>
+      </div>
+
+    </div>
+  </footer>
+
+  <script src="js/principal.js" defer></script>
+  <script src="js/recursos.js" defer></script>
+  <script src="js/contacto.js" defer></script>
+</body>
+</html>
